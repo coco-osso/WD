@@ -1,550 +1,1336 @@
-<!DOCTYPE html><html lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container":"#e9eef4","on-tertiary-container":"#8d99ae","tertiary-fixed":"#d7e3fa","secondary-fixed-dim":"#81cfff","background":"#f6faff","on-background":"#171c21","outline":"#73777e","secondary-fixed":"#c6e7ff","surface":"#f6faff","on-secondary-fixed-variant":"#004c6b","surface-dim":"#d5dbe0","on-primary-fixed-variant":"#2b486a","primary-fixed-dim":"#acc9f0","surface-container-highest":"#dee3e9","on-primary-fixed":"#001c37","surface-container-high":"#e4e9ef","on-secondary-fixed":"#001e2d","primary-fixed":"#d2e4ff","error-container":"#ffdad6","outline-variant":"#c3c6cf","error":"#ba1a1a","tertiary":"#101c2d","primary":"#001d37","tertiary-container":"#253142","primary-container":"#123252","on-surface":"#171c21","tertiary-fixed-dim":"#bbc7dd","on-tertiary-fixed-variant":"#3c475a","on-error":"#ffffff","surface-container-low":"#eff4fa","on-primary-container":"#7e9bc0","inverse-surface":"#2b3136","surface-tint":"#446083","on-secondary-container":"#004b69","on-primary":"#ffffff","surface-bright":"#f6faff","inverse-on-surface":"#ecf1f7","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","inverse-primary":"#acc9f0","on-tertiary":"#ffffff","on-tertiary-fixed":"#101c2c","on-error-container":"#93000a","surface-variant":"#dee3e9","secondary-container":"#41befd","on-surface-variant":"#43474e","secondary":"#00658d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xs":"0.25rem","space-xl":"2.5rem","space-sm":"0.5rem","margin":"2rem","gutter":"1.5rem","space-md":"1rem","space-lg":"1.5rem"},"fontFamily":{"subhead-md":["Arial"],"subhead-lg":["Arial"],"label-sm":["Arial"],"headline-lg-mobile":["Arial"],"body-lg":["Arial"],"body-md":["Arial"],"headline-xl":["Arial"],"body-sm":["Arial"],"headline-xl-mobile":["Arial"],"label-md":["Arial"],"headline-sm":["Arial"],"headline-lg":["Arial"],"headline-md":["Arial"]},"fontSize":{"subhead-md":["16px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"700"}],"subhead-lg":["18px",{"lineHeight":"26px","letterSpacing":"0.005em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"700"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"0em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-primary-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1320px] mx-auto px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-headline-sm">science</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight">WD CHEMICALS</span><span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">Ingeniería de Agua &amp; Procesos</span></div></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-on-primary font-bold bg-primary rounded-lg"><a aria-current="page" class="px-space-md py-space-sm transition-colors text-on-primary font-bold bg-primary rounded-lg" data-path="inicio" href="#">Inicio</a><a class="px-space-md py-space-sm font-subhead-md text-subhead-md text-on-primary-container hover:text-on-primary transition-colors" data-path="servicios" href="#">Servicios</a><a class="px-space-md py-space-sm font-subhead-md text-subhead-md text-on-primary-container hover:text-on-primary transition-colors" data-path="productos" href="#">Productos</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-secondary-container text-on-secondary-container font-subhead-md text-subhead-md shadow-sm hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all" data-path="blog-de-expertos" href="#"><span class="">Blog de Expertos</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VGKY6hKtFrBe86rrAoSj2LLW4Ip6s_Jwc2RM6tPICuDxbeWn8iZFSv9IRRzX8nAwaP6Zz09Owp8KDWkGXZVICAmGWsFCRJ_cgjUPZJw055WES4EoXDhlCSAmYv18r_WupgPeTJ0PEGqCKA9JC7TFOFtjsG7-IWptBBz2JR5HJREvAK1I6ozboNmOTz_voxindanG-fmbyToHHXQKOOd0xkSPW4uwNIXttV2W3r4JTa29S5VDriqlmWi5vLvQrA4cXqB_6ysCc7NA"></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
-<!-- 1. HERO BANNER -->
-<section class="relative w-full bg-surface py-space-xl overflow-hidden">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<!-- Hero Content (7 Cols) -->
-<div class="lg:col-span-7 flex flex-col gap-space-md z-10">
-<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-lg w-fit">
-<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
-<span class="font-label-sm text-label-sm text-primary-container tracking-wider uppercase">Esquema Integral Comodato Industrial</span>
-</div>
-<h1 class="font-headline-xl text-headline-xl text-primary-container tracking-tight leading-none">
-            Soluciones Integrales en <span class="text-secondary-container block sm:inline">Tratamiento de Aguas</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-            Brindamos un servicio integral donde equipamos y automatizamos a comodato para maximizar la eficiencia y seguridad de sus operaciones industriales.
-          </p>
-<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
-<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-secondary-container text-on-primary font-subhead-md text-subhead-md rounded-lg shadow-sm hover:bg-secondary transition-all hover:shadow-md" href="#servicios-industriales">
-<span class="">Conozca Nuestros Servicios</span>
-<span class="material-symbols-outlined text-subhead-md">arrow_forward</span>
-</a>
-<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm bg-surface-container-lowest text-primary-container font-subhead-md text-subhead-md rounded-lg shadow-sm hover:bg-surface-container transition-all" href="#contacto-tecnico">
-<span class="material-symbols-outlined text-subhead-md">assessment</span>
-<span class="">Solicitar Diagnóstico</span>
-</a>
-</div>
-<!-- Micro Metricas Rápidas -->
-<div class="grid grid-cols-3 gap-space-sm pt-space-md border-t border-surface-container-highest">
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-primary-container">0%</span>
-<span class="font-body-sm text-body-sm text-outline">CAPEX Inicial</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-secondary-container">24/7</span>
-<span class="font-body-sm text-body-sm text-outline">Telemetría Online</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-primary-container">NOM-127</span>
-<span class="font-body-sm text-body-sm text-outline">Norma Vigente</span>
-</div>
-</div>
-</div>
-<!-- Hero Showcase Visual (5 Cols) -->
-<div class="lg:col-span-5 relative flex justify-center mt-space-md lg:mt-0">
-<div class="relative w-full max-w-[480px] rounded-xl overflow-hidden shadow-xl bg-surface-container-lowest">
-<!-- Signature Accent Top Bar -->
-<div class="w-full h-1.5 bg-secondary-container"></div>
-<div class="relative h-[420px] w-full bg-surface-container">
-<img alt="Sistemas de filtración y purificación WD Chemicals instalados en batería industrial" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWDQy0DIoTLDglvkCb85CWpwuAr468c6DPxd2TQxK9ssJbqZGi91Egwe4fLB3VUVS9WVe59k96l4HfzxOV4YmyPY3jYUTQw6C9C9sV7zFyJimIKX6k4uInib_dIehMg7WXWQZWeZ6-kz8TZFuStYwSJA5OcNNWevya7_B7GP1OC7LdjRev7jQ6EWAG4WANbODTHcpq4oY8v9IgUeJbIwYoKhLwfqTS94A5jXdNRWSEdyx8hwNEH98T4G5Ix3L_kHCozg">
-<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 via-transparent to-transparent"></div>
-<!-- Floating Status Indicator 1 -->
-<div class="absolute top-4 left-4 bg-surface-container-lowest/95 backdrop-blur-sm p-space-sm rounded-lg shadow-md flex items-center gap-space-xs">
-<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
-<span class="font-label-sm text-label-sm text-primary-container uppercase">Monitoreo Automatizado Activo</span>
-</div>
-<!-- Floating Status Indicator 2 -->
-<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-sm p-space-md rounded-lg shadow-lg flex items-center justify-between">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary-container text-headline-sm">precision_manufacturing</span>
-<div class="flex flex-col">
-<span class="font-subhead-md text-subhead-md text-primary-container leading-none">Control Químico Continuo</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Batería de filtración cuádruple</span>
-</div>
-</div>
-<div class="text-right">
-<span class="font-label-sm text-label-sm text-secondary uppercase block">Estado</span>
-<span class="font-subhead-md text-subhead-md text-primary-container font-bold">100% OK</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!DOCTYPE html><html lang="es-MX" style=""><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tratamiento de Aguas | Torres de enfriamiento, calderas, chillers y agua potable</title>
+<meta name="description" content="Soluciones integrales en tratamiento de aguas industriales: equipamos y automatizamos en comodato. Torres de enfriamiento, calderas, chillers, agua potable y sal de grano lavada.">
+<meta name="theme-color" content="#123252">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6C32 6 14 28 14 40a18 18 0 0 0 36 0C50 28 32 6 32 6Z' fill='%2300A3E0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cobalto: #123252;
+  --cobalto-oscuro: #0C2239;
+  --profundo: #123252;
+  --cian: #00A3E0;
+  --cian-oscuro: #0077A8;
+  --blanco-glaciar: #F4F9FF;
+  --blanco: #FFFFFF;
+  --gris-acero: #8E9AAF;
+  --gris-azulado: #4B5D75;
+  --linea-fina: rgba(142, 154, 175, 0.4);
+  --linea-clara: rgba(244, 249, 255, 0.2);
+  --sans: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --max: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--blanco);
+  color: var(--cobalto);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, canvas { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
+
+.wrap {
+  width: min(var(--max), 100% - 2 * clamp(24px, 5vw, 64px));
+  margin-inline: auto;
+}
+
+/* ENCABEZADO */
+.cab {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(18, 50, 82, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--blanco);
+  border-bottom: 1px solid var(--linea-clara);
+}
+.cab-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  gap: 32px;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  color: var(--blanco);
+}
+.marca svg { width: 30px; height: 30px; flex-shrink: 0; }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.nav a {
+  color: rgba(244, 249, 255, 0.85);
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 6px 0;
+}
+.nav a:hover { color: var(--blanco); }
+.nav a[aria-current="true"] { color: var(--cian); }
+.nav .btn-nav {
+  background: var(--cian);
+  color: var(--cobalto);
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+.nav .btn-nav:hover { background: #33b5e5; transform: translateY(-1px); }
+
+/* BOTONES PILL */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 15px 32px;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease;
+}
+.btn-cian {
+  background: var(--cian);
+  color: var(--cobalto);
+}
+.btn-cian:hover {
+  background: #33b5e5;
+  box-shadow: 0 4px 16px rgba(0, 163, 224, 0.3);
+}
+.btn-borde {
+  border-color: rgba(244, 249, 255, 0.6);
+  color: var(--blanco);
+  background: transparent;
+}
+.btn-borde:hover {
+  border-color: var(--blanco);
+  background: rgba(244, 249, 255, 0.08);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  background: var(--cobalto);
+  color: var(--blanco);
+  min-height: calc(92vh - 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+#olas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.hero-cuerpo {
+  position: relative;
+  z-index: 2;
+  padding: clamp(64px, 10vw, 110px) 0 48px;
+  max-width: 900px;
+}
+.hero-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cian);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: var(--blanco);
+}
+.hero .lead {
+  margin-top: 28px;
+  max-width: 650px;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  color: var(--blanco-glaciar);
+  line-height: 1.5;
+  font-weight: 400;
+}
+.hero-acciones {
+  margin-top: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Franja inferior del Hero */
+.hero-franja {
+  position: relative;
+  z-index: 2;
+  background: rgba(18, 50, 82, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--linea-clara);
+}
+.hero-franja-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.hero-franja-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(244, 249, 255, 0.9);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.hero-franja-grid a + a {
+  border-left: 1px solid var(--linea-clara);
+}
+.hero-franja-grid a:hover {
+  color: var(--cian);
+  background: rgba(0, 163, 224, 0.08);
+}
+
+/* SECCIONES BASE */
+.seccion {
+  padding: clamp(80px, 9vw, 130px) 0;
+  scroll-margin-top: 76px;
+}
+.seccion-blanca { background: var(--blanco); color: var(--cobalto); }
+.seccion-glaciar { background: var(--blanco-glaciar); color: var(--cobalto); }
+.seccion-oscura { background: var(--cobalto); color: var(--blanco); }
+
+.seccion-tit-row {
+  margin-bottom: 56px;
+}
+.seccion-tit {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  line-height: 1.08;
+  color: inherit;
+}
+.seccion-desc {
+  margin-top: 16px;
+  max-width: 580px;
+  color: var(--gris-azulado);
+  font-size: 1.18rem;
+}
+.seccion-oscura .seccion-desc {
+  color: rgba(244, 249, 255, 0.8);
+}
+
+/* SECCIÓN NOSOTROS */
+.nos-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+}
+.nos-col-der .lead-parrafo {
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.45;
+  color: var(--cobalto);
+  font-style: normal;
+  margin-bottom: 40px;
+}
+.pilares-lista {
+  list-style: none;
+}
+.pilar-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+  padding: 26px 0;
+  border-top: 1px solid var(--linea-fina);
+}
+.pilar-item:last-child {
+  border-bottom: 1px solid var(--linea-fina);
+}
+.pilar-item b {
+  font-family: var(--sans);
+  font-size: 1.5rem;
+  color: var(--cobalto);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.pilar-item span {
+  color: var(--gris-azulado);
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+/* SECCIÓN SERVICIOS (EXPLORADOR) */
+.servicios-explorador {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(36px, 6vw, 84px);
+  margin-top: 48px;
+  align-items: start;
+}
+.serv-tabs {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--linea-fina);
+}
+.serv-tab {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--linea-fina);
+  padding: 26px 20px 26px 24px;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--gris-azulado);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  letter-spacing: -0.01em;
+}
+.serv-tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 4px;
+  background: var(--cian-oscuro);
+  transform: scaleY(0);
+  transition: transform 0.22s ease;
+}
+.serv-tab:hover { color: var(--cobalto); }
+.serv-tab[aria-selected="true"] {
+  color: var(--cobalto);
+  background: rgba(255, 255, 255, 0.7);
+}
+.serv-tab[aria-selected="true"]::before {
+  transform: scaleY(1);
+}
+
+.serv-panel {
+  background: var(--blanco);
+  border: 1px solid var(--linea-fina);
+  border-radius: 4px;
+  padding: clamp(32px, 5vw, 56px);
+  animation: fadeIn 0.3s ease;
+}
+.serv-panel[hidden] { display: none; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.serv-panel-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+.serv-panel-cab h3 {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  color: var(--cobalto);
+}
+.serv-icono {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  color: var(--cobalto);
+}
+.serv-icono .acento {
+  stroke: var(--cian-oscuro);
+}
+
+.serv-texto {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--cobalto);
+  max-width: 68ch;
+}
+
+.serv-puntos {
+  list-style: none;
+  margin: 36px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+.serv-puntos li {
+  padding: 14px 0;
+  border-top: 1px solid var(--linea-fina);
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--cobalto);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.serv-puntos li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cian-oscuro);
+  flex-shrink: 0;
+}
+
+.enlace-subrayado {
+  display: inline-block;
+  margin-top: 36px;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--cian-oscuro);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  transition: color 0.2s ease;
+}
+.enlace-subrayado:hover { color: var(--cobalto); }
+
+/* SAL DE GRANO */
+.sal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  margin-top: 48px;
+  align-items: start;
+}
+.sal-col-izq p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--cobalto);
+}
+.ficha-datos {
+  margin: 36px 0 0;
+}
+.ficha-fila {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 18px;
+  padding: 15px 0;
+  border-top: 1px solid var(--linea-fina);
+}
+.ficha-fila:last-child {
+  border-bottom: 1px solid var(--linea-fina);
+}
+.ficha-fila dt {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--gris-azulado);
+}
+.ficha-fila dd {
+  font-size: 1.02rem;
+  color: var(--cobalto);
+}
+
+.sal-col-der h3 {
+  font-size: clamp(1.5rem, 2.3vw, 2.05rem);
+  margin-bottom: 18px;
+  color: var(--cobalto);
+}
+.sal-col-der p {
+  color: var(--cobalto);
+  line-height: 1.65;
+}
+
+/* CAJA DEMO SUAVIZADOR */
+.demo-box {
+  margin-top: 32px;
+  background: var(--blanco);
+  border: 1px solid var(--gris-acero);
+  border-radius: 4px;
+  padding: clamp(24px, 3.5vw, 36px);
+}
+.demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.switch-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--cobalto);
+}
+.switch-pista {
+  width: 52px;
+  height: 30px;
+  border-radius: 9999px;
+  background: var(--gris-acero);
+  position: relative;
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+.switch-perilla {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--blanco);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+}
+.switch-btn[aria-checked="true"] .switch-pista {
+  background: var(--cian-oscuro);
+}
+.switch-btn[aria-checked="true"] .switch-perilla {
+  transform: translateX(22px);
+}
+
+.tanque-grafico {
+  margin-top: 24px;
+  border: 2px solid var(--cobalto);
+  border-radius: 16px 16px 42px 42px;
+  padding: 20px 18px 26px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(4px, 0.7vw, 7px);
+  background: linear-gradient(180deg, var(--blanco-glaciar) 0%, rgba(244, 249, 255, 0.4) 100%);
+}
+.grano-esfera {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #e0f6fd, var(--cian) 55%, var(--cian-oscuro));
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+}
+.grano-esfera::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #e6eaf0, var(--gris-acero) 55%, #5d6a82);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.grano-esfera.dura::after {
+  opacity: 1;
+}
+
+.demo-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 18px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gris-azulado);
+}
+.demo-leyenda-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.punto-cian {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cian);
+}
+.punto-gris {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gris-acero);
+}
+
+.medidor-area {
+  margin-top: 24px;
+}
+.medidor-head {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+  color: var(--cobalto);
+}
+.medidor-barra {
+  height: 8px;
+  background: rgba(142, 154, 175, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.medidor-relleno {
+  display: block;
+  height: 100%;
+  background: var(--cobalto);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.25s linear;
+}
+.demo-estado-texto {
+  margin-top: 18px;
+  min-height: 4em;
+  font-size: 1.05rem;
+  color: var(--cobalto);
+  line-height: 1.5;
+}
+.demo-pie-nota {
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--gris-azulado);
+}
+
+/* BLOG */
+.blog-lista {
+  list-style: none;
+  margin-top: 48px;
+  border-bottom: 1px solid var(--linea-fina);
+}
+.blog-item {
+  border-top: 1px solid var(--linea-fina);
+}
+.blog-enlace {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 0;
+  transition: all 0.2s ease;
+}
+.blog-enlace h4 {
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  color: var(--cobalto);
+  transition: color 0.2s ease;
+}
+.blog-enlace p {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  color: var(--gris-azulado);
+}
+.blog-icono {
+  width: 32px;
+  height: 32px;
+  color: var(--cian-oscuro);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.blog-enlace:hover h4 {
+  color: var(--cian-oscuro);
+}
+.blog-enlace:hover .blog-icono {
+  transform: translate(3px, -3px);
+}
+
+/* CONTACTO */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(40px, 7vw, 110px);
+  align-items: start;
+}
+.contacto-info h2 {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  line-height: 1.08;
+  color: var(--blanco);
+}
+.contacto-info p {
+  margin-top: 24px;
+  font-size: 1.2rem;
+  color: rgba(244, 249, 255, 0.85);
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+.contacto-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 30px;
+}
+.campo-fila {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.campo-full {
+  grid-column: 1 / -1;
+}
+.campo-fila label {
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: rgba(244, 249, 255, 0.85);
+}
+.campo-input, .campo-select, .campo-textarea {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--blanco);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(244, 249, 255, 0.35);
+  padding: 10px 0;
+  border-radius: 0;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.campo-select {
+  cursor: pointer;
+}
+.campo-select option {
+  background: var(--cobalto);
+  color: var(--blanco);
+}
+.campo-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.campo-input:focus, .campo-select:focus, .campo-textarea:focus {
+  border-bottom-color: var(--cian);
+}
+.form-botones {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 12px;
+}
+.form-aviso {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--cian);
+}
+
+/* PIE DE PÁGINA */
+.pie {
+  background: var(--cobalto-oscuro);
+  color: var(--blanco-glaciar);
+  padding: 40px 0;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(244, 249, 255, 0.1);
+}
+.pie-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* RESPONSIVE DESKTOP/GENERAL */
+@media (max-width: 960px) {
+  .nos-grid, .contacto-grid, .sal-grid {
+    grid-template-columns: 1fr;
+  }
+  .servicios-explorador {
+    grid-template-columns: 1fr;
+  }
+  .serv-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-top: none;
+    border-bottom: 1px solid var(--linea-fina);
+    scrollbar-width: none;
+  }
+  .serv-tab {
+    white-space: nowrap;
+    border-bottom: none;
+    padding: 16px 20px;
+  }
+  .serv-tab::before {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 3px;
+    transform: scaleX(0);
+  }
+  .serv-tab[aria-selected="true"]::before {
+    transform: scaleX(1);
+  }
+  .hero-franja-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-franja-grid a:nth-child(3) {
+    border-left: none;
+  }
+  .hero-franja-grid a:nth-child(n+3) {
+    border-top: 1px solid var(--linea-clara);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO FIJO -->
+<header class="cab">
+  <div class="wrap cab-in">
+    <a class="marca" href="#inicio">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M32 6C32 6 14 28 14 40a18 18 0 0 0 36 0C50 28 32 6 32 6Z" fill="#00A3E0"></path>
+        <path d="M24 42c3 4 12 5 16-2" stroke="#123252" stroke-width="3.5" stroke-linecap="round"></path>
+      </svg>
+      <span class="">WD Chemicals</span>
+    </a>
+    <nav class="nav">
+      <a href="#nosotros" class="">Nosotros</a>
+      <a href="#servicios" class="">Servicios</a>
+      <a href="#sal" class="">Sal de grano</a>
+      
+      <a class="btn-nav" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO CON CANVAS OLAS CIAN Y COBALTO -->
+<section class="hero" id="inicio">
+  <canvas id="olas" aria-hidden="true" width="1280" height="866"></canvas>
+  <div class="wrap hero-cuerpo">
+    <span class="hero-tag">Tratamiento Integral de Agua Industrial</span>
+    <h1 class="">Equipamos y automatizamos tu tratamiento de agua</h1>
+    <p class="lead">Soluciones integrales para torres de enfriamiento, calderas, chillers y agua potable, con el equipo en comodato.</p>
+    <div class="hero-acciones">
+      <a class="btn btn-cian" href="#servicios">Ver servicios</a>
+      <a class="btn btn-borde" href="#contacto">Solicitar información</a>
+    </div>
+  </div>
+
+  <div class="hero-franja">
+    <div class="wrap hero-franja-grid">
+      <a href="#servicios" data-ir="torres" class="">Torres de enfriamiento</a>
+      <a href="#servicios" data-ir="caldera" class="">Calderas</a>
+      <a href="#servicios" data-ir="chillers" class="">Chillers</a>
+      <a href="#servicios" data-ir="potable" class="">Agua potable</a>
+    </div>
+  </div>
 </section>
-<!-- 2. BARRA DE AUTORIDAD Y VENTAJAS DE COMODATO -->
-<section class="w-full bg-surface-container-low py-space-lg shadow-inner">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<!-- Ventaja 1 -->
-<div class="flex items-start gap-space-sm p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
-<div class="p-space-sm rounded-lg bg-surface-container text-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-headline-sm">handshake</span>
-</div>
-<div class="flex flex-col">
-<span class="font-subhead-md text-subhead-md text-primary-container">Equipamiento a Comodato 100%</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Sin descapitalización ni desembolso de CAPEX.</span>
-</div>
-</div>
-<!-- Ventaja 2 -->
-<div class="flex items-start gap-space-sm p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
-<div class="p-space-sm rounded-lg bg-surface-container text-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-headline-sm">sensors</span>
-</div>
-<div class="flex flex-col">
-<span class="font-subhead-md text-subhead-md text-primary-container">Automatización &amp; Telemetría 24/7</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Dosificación inteligente y control remoto continuo.</span>
-</div>
-</div>
-<!-- Ventaja 3 -->
-<div class="flex items-start gap-space-sm p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
-<div class="p-space-sm rounded-lg bg-surface-container text-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-headline-sm">verified_user</span>
-</div>
-<div class="flex flex-col">
-<span class="font-subhead-md text-subhead-md text-primary-container">Cumplimiento Normativo</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Asesoría estricta en NOM-127-SSA1-2021.</span>
-</div>
-</div>
-<!-- Ventaja 4 -->
-<div class="flex items-start gap-space-sm p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
-<div class="p-space-sm rounded-lg bg-surface-container text-secondary-container flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-headline-sm">local_shipping</span>
-</div>
-<div class="flex flex-col">
-<span class="font-subhead-md text-subhead-md text-primary-container">Suministro Continuo</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Formulaciones químicas directas de planta.</span>
-</div>
-</div>
-</div>
-</div>
+
+<!-- NOSOTROS -->
+<section class="seccion seccion-blanca" id="nosotros">
+  <div class="wrap nos-grid">
+    <div>
+      <h2 class="seccion-tit">Un servicio integral para tu agua</h2>
+    </div>
+    <div class="nos-col-der">
+      <p class="lead-parrafo">Somos una empresa dedicada a prestar soluciones en tratamiento de aguas para brindar un servicio integral, donde equipamos y automatizamos en comodato.</p>
+      <ul class="pilares-lista">
+        <li class="pilar-item">
+          <b>Equipamos</b>
+          <span class="">Suministramos el equipo que tu sistema necesita para tratar el agua.</span>
+        </li>
+        <li class="pilar-item">
+          <b>Automatizamos</b>
+          <span class="">El tratamiento funciona de forma automatizada, sin depender de ajustes manuales constantes.</span>
+        </li>
+        <li class="pilar-item">
+          <b>En comodato</b>
+          <span class="">Los equipos se entregan bajo un esquema de comodato.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
-<!-- 3. SECCIÓN DE SERVICIOS -->
-<section class="w-full bg-surface py-space-xl" id="servicios-industriales">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-md text-label-md text-secondary-container uppercase tracking-wider">Ingeniería Aplicada</span>
-<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight">Servicios Industriales Especializados</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-            Optimizamos los circuitos térmicos e hídricos más exigentes con control analítico riguroso y equipos automatizados de última generación.
-          </p>
-</div>
-<div class="shrink-0">
-<span class="font-body-sm text-body-sm text-outline">Tecnología de precisión para planta</span>
-</div>
-</div>
-<!-- 4 Cards Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<!-- Tarjeta 1: Torres de Enfriamiento -->
-<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="p-space-lg flex flex-col flex-1">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary-container mb-space-md">
-<span class="material-symbols-outlined text-headline-md">mode_fan</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary-container mb-space-xs">Torre de Enfriamiento</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-              Mitigación de corrosión acelerada, control de incrustaciones minerales y protocolo estricto para prevención de bacterias de alto riesgo biológico como Legionella.
-            </p>
-<div class="pt-space-sm border-t border-surface-container-high flex flex-col gap-space-xs">
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Ahorro en purga:</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">Hasta 35%</span>
-</div>
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Ciclos de Concentración:</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">Optimizados 5x</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Tarjeta 2: Calderas -->
-<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="p-space-lg flex flex-col flex-1">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary-container mb-space-md">
-<span class="material-symbols-outlined text-headline-md">local_fire_department</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary-container mb-space-xs">Calderas</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-              Máxima eficiencia energética mediante acondicionamiento de agua de alimentación. Eliminación de depósitos calizos y prevención de fallas catastróficas por sobrecalentamiento de tuberías.
-            </p>
-<div class="pt-space-sm border-t border-surface-container-high flex flex-col gap-space-xs">
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Calidad del Vapor:</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">Alta Pureza</span>
-</div>
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Paradas no programadas:</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">-90% Incidencia</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Tarjeta 3: Chillers -->
-<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="p-space-lg flex flex-col flex-1">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary-container mb-space-md">
-<span class="material-symbols-outlined text-headline-md">ac_unit</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary-container mb-space-xs">Chillers &amp; HVAC</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-              Protección de evaporadores y condensadores contra incrustaciones de sílice y biopelículas viscosas que bloquean la transferencia térmica en sistemas de enfriamiento crítico.
-            </p>
-<div class="pt-space-sm border-t border-surface-container-high flex flex-col gap-space-xs">
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Cop / Eficiencia:</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">Estable</span>
-</div>
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Corrosión en cobre:</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">&lt; 0.1 mpy</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Tarjeta 4: Agua Potable -->
-<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="p-space-lg flex flex-col flex-1">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary-container mb-space-md">
-<span class="material-symbols-outlined text-headline-md">water_ph</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary-container mb-space-xs">Agua Potable</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-              Potabilización avanzada, microfiltración y dosificación automatizada de desinfectantes para salvaguardar la salud del personal con apego irrestricto a la NOM-127-SSA1-2021.
-            </p>
-<div class="pt-space-sm border-t border-surface-container-high flex flex-col gap-space-xs">
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Cumplimiento:</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">NOM-127 Oficial</span>
-</div>
-<div class="flex items-center justify-between text-body-sm">
-<span class="text-outline font-body-sm">Desinfección:</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">Residual Seguro</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- SERVICIOS CON EXPLORADOR INTERACTIVO -->
+<section class="seccion seccion-glaciar" id="servicios">
+  <div class="wrap">
+    <div class="seccion-tit-row">
+      <h2 class="seccion-tit">Servicios</h2>
+      <p class="seccion-desc">Cuatro sistemas donde el agua bien tratada protege tus equipos, tus costos y a las personas.</p>
+    </div>
+
+    <div class="servicios-explorador">
+      <div class="serv-tabs" role="tablist" aria-label="Servicios industriales" aria-orientation="vertical">
+        <button class="serv-tab" role="tab" id="tab-torres" aria-controls="panel-torres" aria-selected="false" data-id="torres" tabindex="-1">Torres de enfriamiento</button>
+        <button class="serv-tab" role="tab" id="tab-caldera" aria-controls="panel-caldera" aria-selected="false" tabindex="-1" data-id="caldera">Calderas</button>
+        <button class="serv-tab" role="tab" id="tab-chillers" aria-controls="panel-chillers" aria-selected="false" tabindex="-1" data-id="chillers">Chillers</button>
+        <button class="serv-tab" role="tab" id="tab-potable" aria-controls="panel-potable" aria-selected="true" tabindex="0" data-id="potable">Agua potable</button>
+      </div>
+
+      <div class="serv-paneles-contenedor">
+        <!-- Panel 1: Torres de enfriamiento -->
+        <article class="serv-panel" role="tabpanel" id="panel-torres" aria-labelledby="tab-torres" hidden="">
+          <div class="serv-panel-cab">
+            <h3 class="">Torres de enfriamiento</h3>
+            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <ellipse cx="100" cy="76" rx="46" ry="9"></ellipse>
+              <path d="M54 76 Q86 128 62 180 H138 Q114 128 146 76"></path>
+              <path d="M70 158 H130 M66 168 H134"></path>
+              <path class="acento" d="M82 58 q-8-10 0-20 q8-10 0-20 M102 54 q-8-10 0-20 q8-10 0-20 M122 58 q-8-10 0-20 q8-10 0-20"></path>
+            </svg>
+          </div>
+          <p class="serv-texto">El tratamiento del agua en las torres de enfriamiento es crucial para prevenir la corrosión, la formación de incrustaciones y el crecimiento microbiano, lo que garantiza una alta eficiencia energética, prolonga la vida útil del equipo, reduce los costos de mantenimiento y evita la proliferación de patógenos como la bacteria <i>Legionella</i>.</p>
+          <ul class="serv-puntos">
+            <li class="">Previene corrosión e incrustaciones</li>
+            <li class="">Frena el crecimiento microbiano</li>
+            <li class="">Evita la proliferación de <i>Legionella</i></li>
+            <li class="">Alta eficiencia energética</li>
+            <li class="">Prolonga la vida útil del equipo</li>
+            <li class="">Reduce los costos de mantenimiento</li>
+          </ul>
+          <a class="enlace-subrayado" href="#blog" data-blog="torres">Leer más en el blog</a>
+        </article>
+
+        <!-- Panel 2: Calderas -->
+        <article class="serv-panel" role="tabpanel" id="panel-caldera" aria-labelledby="tab-caldera" hidden="">
+          <div class="serv-panel-cab">
+            <h3 class="">Calderas</h3>
+            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="34" y="92" width="132" height="80" rx="20"></rect>
+              <path d="M132 92 V58 H150 V92"></path>
+              <path class="acento" d="M141 46 q-8-8 0-16 q8-8 0-16"></path>
+              <circle cx="66" cy="122" r="11"></circle>
+              <path d="M66 122 L72 115"></path>
+              <path class="acento" d="M112 160 c-16-12-8-26 0-38 c4 9 18 15 13 29 c-2 6-8 9-13 9z"></path>
+            </svg>
+          </div>
+          <p class="serv-texto">El tratamiento de agua en calderas es fundamental para prevenir la corrosión y las incrustaciones, mejorar la eficiencia energética, prolongar la vida útil del equipo, asegurar la calidad del vapor y reducir los costos de operación y mantenimiento. Al eliminar impurezas dañinas del agua, se garantiza un funcionamiento seguro y rentable del sistema, minimizando fallos y paradas imprevistas.</p>
+          <ul class="serv-puntos">
+            <li class="">Previene corrosión e incrustaciones</li>
+            <li class="">Mejora la eficiencia energética</li>
+            <li class="">Prolonga la vida útil del equipo</li>
+            <li class="">Asegura la calidad del vapor</li>
+            <li class="">Reduce costos de operación y mantenimiento</li>
+            <li class="">Minimiza fallos y paradas imprevistas</li>
+          </ul>
+          <a class="enlace-subrayado" href="#blog" data-blog="caldera">Leer más en el blog</a>
+        </article>
+
+        <!-- Panel 3: Chillers -->
+        <article class="serv-panel" role="tabpanel" id="panel-chillers" aria-labelledby="tab-chillers" hidden="">
+          <div class="serv-panel-cab">
+            <h3 class="">Chillers</h3>
+            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="28" y="104" width="144" height="66" rx="8"></rect>
+              <circle cx="70" cy="80" r="20"></circle>
+              <circle cx="130" cy="80" r="20"></circle>
+              <path class="acento" d="M70 66 V94 M56 80 H84 M130 66 V94 M116 80 H144"></path>
+              <path d="M28 150 H12 M172 150 H188"></path>
+              <path d="M50 130 H150"></path>
+            </svg>
+          </div>
+          <p class="serv-texto">El tratamiento de agua en los chillers es primordial para mantener la eficiencia energética, prolongar la vida útil del equipo y asegurar su correcto funcionamiento, ya que previene la acumulación de incrustaciones, la corrosión y el crecimiento de bacterias y algas, problemas que pueden generar sobrecalentamiento, reducir la transferencia de calor y prever paros técnicos.</p>
+          <ul class="serv-puntos">
+            <li class="">Previene incrustaciones y corrosión</li>
+            <li class="">Controla el crecimiento de bacterias y algas</li>
+            <li class="">Evita el sobrecalentamiento</li>
+            <li class="">Mantiene la transferencia de calor</li>
+            <li class="">Mantiene la eficiencia energética</li>
+            <li class="">Prolonga la vida útil del equipo</li>
+          </ul>
+          <a class="enlace-subrayado" href="#blog" data-blog="chillers">Leer más en el blog</a>
+        </article>
+
+        <!-- Panel 4: Agua potable -->
+        <article class="serv-panel" role="tabpanel" id="panel-potable" aria-labelledby="tab-potable">
+          <div class="serv-panel-cab">
+            <h3 class="">Agua potable</h3>
+            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M100 22 C100 22 52 86 52 124 a48 48 0 0 0 96 0 C148 86 100 22 100 22Z"></path>
+              <path class="acento" d="M78 128 l16 16 l30-34"></path>
+            </svg>
+          </div>
+          <p class="serv-texto">La cloración del agua potable en México es vital para la salud pública porque elimina bacterias, virus y otros microorganismos patógenos que causan enfermedades gastrointestinales como cólera, tifoidea y disentería, garantizando así la seguridad del agua de consumo. El cloro actúa como desinfectante con un fuerte poder residual, protegiendo contra la recontaminación en las redes de suministro y cumpliendo con normativas como la NOM-127-SSA1-2021.</p>
+          <ul class="serv-puntos">
+            <li class="">Elimina bacterias, virus y otros patógenos</li>
+            <li class="">Previene cólera, tifoidea y disentería</li>
+            <li class="">Fuerte poder residual en las redes de suministro</li>
+            <li class="">Protege contra la recontaminación</li>
+            <li class="">Cumple con la NOM-127-SSA1-2021</li>
+            <li class="">Garantiza la seguridad del agua de consumo</li>
+          </ul>
+          <a class="enlace-subrayado" href="#blog" data-blog="potable">Leer más en el blog</a>
+        </article>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- 4. VITRINA DE INSTALACIONES Y SISTEMAS EN SITIO -->
-<section class="w-full bg-surface-container-low py-space-xl">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="flex flex-col gap-space-xs mb-space-lg">
-<span class="font-label-md text-label-md text-secondary-container uppercase tracking-wider">Despliegues en Terreno</span>
-<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight">Equipamiento Industrial Operativo en Comodato</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-          Instalaciones reales ejecutadas por nuestro equipo de ingeniería química. Sistemas integrados de lecho profundo, suavización y pretratamiento de alta confiabilidad.
-        </p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
-<!-- Showcase Card 1 (IMAGE_2) -->
-<div class="lg:col-span-6 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="relative h-72 sm:h-80 w-full overflow-hidden bg-surface-container">
-<img alt="Sistemas suavizadores duales gemelos WD Chemicals en planta industrial con tubería técnica de proceso" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD__rtz5ojCq3snnFjD7KVuG8_BoFmCacN5DX_NcIqWm58TksQw2auhxIsQ3k-eQnSnQK-uVFrt9tzSzcOsCCu2Aa1w8-PGG60u91uDGR1t-Mj5Sn3dGIfhu8nhhNzWoSTa8BvUnAYP9VqPEtLi2JC1Xpd5iCAlc8Ix4zSBrS8z0Y6IiNiBoSOqAIs-KS44vs34PG0vLBN2lHUqecc0N6yJ2O4NPbd9i8uioBHjyDCtYKGOSc1qYn-Wv7s5SvaCGa57HA">
-<div class="absolute top-3 right-3 bg-primary-container/90 text-on-primary px-space-sm py-1 rounded font-label-sm uppercase tracking-wide">
-              Suavizador Duplex
+
+<!-- SAL DE GRANO LAVADA -->
+<section class="seccion seccion-blanca" id="sal">
+  <div class="wrap">
+    <div class="seccion-tit-row">
+      <h2 class="seccion-tit">Sal de grano lavada</h2>
+    </div>
+
+    <div class="sal-grid">
+      <!-- Columna izquierda: Información y ficha -->
+      <div class="sal-col-izq">
+        <p class="">La sal de grano lavada es cloruro de sodio en forma granular gruesa de alta pureza, obtenida de la evaporación solar del agua de mar. Se somete a un proceso de lavado y tamizado para eliminar impurezas, lo que la hace ideal para aplicaciones en la industria alimentaria, como conservante y realzador de sabor, así como para tratamientos de agua, curtido de pieles y fabricación de productos cárnicos y encurtidos.</p>
+
+        <dl class="ficha-datos">
+          <div class="ficha-fila">
+            <dt>Composición</dt>
+            <dd>Cloruro de sodio</dd>
+          </div>
+          <div class="ficha-fila">
+            <dt>Presentación</dt>
+            <dd>Granular gruesa, de alta pureza</dd>
+          </div>
+          <div class="ficha-fila">
+            <dt>Origen</dt>
+            <dd>Evaporación solar del agua de mar</dd>
+          </div>
+          <div class="ficha-fila">
+            <dt>Proceso</dt>
+            <dd>Lavado y tamizado para eliminar impurezas</dd>
+          </div>
+          <div class="ficha-fila">
+            <dt>Aplicaciones</dt>
+            <dd>Industria alimentaria (conservante y realzador de sabor), tratamientos de agua, curtido de pieles, productos cárnicos y encurtidos</dd>
+          </div>
+        </dl>
+
+        <a class="enlace-subrayado" href="#blog" data-blog="sal">Leer más en el blog</a>
+      </div>
+
+      <!-- Columna derecha: Suavizadores y Demo Interactiva -->
+      <div class="sal-col-der">
+        <h3 class="">La sal en los suavizadores de agua</h3>
+        <p class="">La sal es esencial en los suavizadores de agua para regenerar las resinas que atrapan los iones de calcio y magnesio, permitiendo así el proceso de intercambio iónico y ablandando el agua. Sin sal, las resinas se saturan de minerales duros y el sistema pierde su capacidad de funcionar correctamente.</p>
+
+        <div class="demo-box" id="demo">
+          <div class="demo-header">
+            <button class="switch-btn" id="swSal" role="switch" aria-checked="true">
+              <span class="switch-pista"><span class="switch-perilla"></span></span>
+              <span class="">Suavizador con sal</span>
+            </button>
+          </div>
+
+          <div class="tanque-grafico" id="tanque" aria-hidden="true"><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span></div>
+
+          <div class="demo-leyenda" aria-hidden="true">
+            <span class="demo-leyenda-item"><i class="punto-cian"></i> Resina lista</span>
+            <span class="demo-leyenda-item"><i class="punto-gris"></i> Saturada de calcio y magnesio</span>
+          </div>
+
+          <div class="medidor-area">
+            <div class="medidor-head">
+              <span class="">Agua de salida</span>
+              <span id="medTxt" class="">Endureciendo</span>
             </div>
-</div>
-<div class="p-space-lg flex flex-col flex-1 justify-between">
-<div class="flex flex-col gap-space-xs mb-space-md">
-<h4 class="font-headline-sm text-headline-sm text-primary-container">Tren Gemelo de Resina Catiónica</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                Configuración en paralelo con válvulas multipuerto digitales programadas para regeneración volumétrica continua. Elimina el 100% de la dureza cálcica y magnésica sin interrupción de suministro.
-              </p>
-</div>
-<div class="grid grid-cols-3 gap-space-sm p-space-sm bg-surface rounded-lg">
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Flujo</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">85 GPM</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Válvula</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">Digital 2"</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Tanque</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">FRP Reforzado</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Showcase Card 2 (IMAGE_3) -->
-<div class="lg:col-span-6 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-md">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="relative h-72 sm:h-80 w-full overflow-hidden bg-surface-container">
-<img alt="Batería de cuatro tanques de gran capacidad WD Chemicals para filtración multicama y acondicionamiento hídrico" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxwyP24NL90XTmBIVOs726YyxPJjjdRhnHA3VfiY5vn7BoAIEBLN5bsC5P_6kS8c0AHkDmLPhZbH57D0xWHZfZZkBiMvXfcb_dg8x7bS9H6hTtbWeFuS9QMg7gSNyf5FpeDW7HGyzavXjHGbeEzVWV2VsHRia-lEYWoCWJav8-5YvZeyNCNeyzsukU7fsYbwgMW8KhBMu7YYrptXXdioQNK6X55UFx92gFASL9Rhz0CExSdGb3by_hZGipR09Pv2IQbg">
-<div class="absolute top-3 right-3 bg-primary-container/90 text-on-primary px-space-sm py-1 rounded font-label-sm uppercase tracking-wide">
-              Batería Multicama
+            <div class="medidor-barra" aria-hidden="true">
+              <i class="medidor-relleno" id="barra" style="transform: scaleX(0.319048);"></i>
             </div>
-</div>
-<div class="p-space-lg flex flex-col flex-1 justify-between">
-<div class="flex flex-col gap-space-xs mb-space-md">
-<h4 class="font-headline-sm text-headline-sm text-primary-container">Módulo Cuádruple de Alta Capacidad</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                Planta con tanques de fibra de vidrio de gran escala para retención de turbidez, sedimentos y carbón activado para adsorción de cloro y materia orgánica disuelta.
-              </p>
-</div>
-<div class="grid grid-cols-3 gap-space-sm p-space-sm bg-surface rounded-lg">
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Flujo Total</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">220 GPM</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Retención</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">&lt; 5 Micras</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Control</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">Retrolavado Aut.</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+          </div>
+
+          <p class="demo-estado-texto" id="estado" aria-live="polite">El agua atraviesa la resina, que atrapa calcio y magnesio por intercambio iónico. El agua sale blanda.</p>
+          <p class="demo-pie-nota">Simulación ilustrativa del funcionamiento de una resina de intercambio iónico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- 5. SECCIÓN DE PRODUCTOS: INSUMOS Y MATERIAS PRIMAS -->
-<section class="w-full bg-surface py-space-xl" id="productos-quimicos">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="flex flex-col gap-space-xs mb-space-lg text-center items-center">
-<span class="font-label-md text-label-md text-secondary-container uppercase tracking-wider">Química Industrial &amp; Consumibles</span>
-<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight">Insumos Químicos y Materias Primas de Alta Pureza</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-          Garantizamos suministros críticos con especificación analítica certificada para resguardar la durabilidad de sus resinas e instalaciones de proceso.
-        </p>
-</div>
-<!-- Featured Product Card: Sal de Grano Lavada -->
-<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 p-space-lg lg:p-space-xl gap-gutter items-center">
-<!-- Detalles Químicos y Técnicos (7 Cols) -->
-<div class="lg:col-span-7 flex flex-col gap-space-md">
-<div class="flex items-center gap-space-xs">
-<span class="px-space-sm py-1 bg-surface-container rounded font-label-sm text-label-sm text-primary-container font-bold uppercase">Reactivo Grado Suavización</span>
-<span class="px-space-sm py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded font-label-sm text-label-sm font-bold uppercase">Pureza ≥ 99.4% NaCl</span>
-</div>
-<div>
-<h3 class="font-headline-lg text-headline-lg text-primary-container mb-space-xs">Sal de Grano Lavada</h3>
-<p class="font-subhead-md text-subhead-md text-secondary-container font-bold">
-                Cloruro de Sodio de evaporación solar de alta pureza para regeneración de resina de intercambio iónico
-              </p>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              Nuestra Sal de Grano Lavada se obtiene mediante evaporación solar controlada y procesos mecánicos de lavado que remueven arcillas, sulfatos y materias insolubles. Es el insumo indispensable para sistemas suavizadores: repone con precisión los iones de sodio en el lecho catiónico, previniendo el apelmazamiento de la resina y alargando radicalmente su ciclo de vida útil sin taponamiento de inyectores venturi.
-            </p>
-<!-- Aplicaciones Versátiles -->
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
-<div class="flex items-center gap-space-xs text-primary-container">
-<span class="material-symbols-outlined text-secondary-container text-subhead-md">check_circle</span>
-<span class="font-body-sm text-body-sm font-bold">Tratamiento Hídrico</span>
-</div>
-<div class="flex items-center gap-space-xs text-primary-container">
-<span class="material-symbols-outlined text-secondary-container text-subhead-md">check_circle</span>
-<span class="font-body-sm text-body-sm font-bold">Industria Alimentaria</span>
-</div>
-<div class="flex items-center gap-space-xs text-primary-container">
-<span class="material-symbols-outlined text-secondary-container text-subhead-md">check_circle</span>
-<span class="font-body-sm text-body-sm font-bold">Manufactura Textil</span>
-</div>
-</div>
-<!-- Fila de Especificaciones Clave -->
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm p-space-md bg-surface-container-low rounded-lg">
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Humedad</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">≤ 2.5%</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Insolubles</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">≤ 0.05%</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Calcio &amp; Mg</span>
-<span class="font-subhead-md text-subhead-md text-primary-container">Mínimo Traza</span>
-</div>
-<div>
-<span class="font-label-sm text-label-sm text-outline block uppercase">Certificación</span>
-<span class="font-subhead-md text-subhead-md text-secondary-container">Grado USP/Food</span>
-</div>
-</div>
-</div>
-<!-- Selector de Presentación y Descarga CTA (5 Cols) -->
-<div class="lg:col-span-5 flex flex-col bg-surface p-space-lg rounded-xl gap-space-md">
-<span class="font-subhead-lg text-subhead-lg text-primary-container">Presentaciones Disponibles</span>
-<div class="flex flex-col gap-space-xs" id="pack-selector">
-<label class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg cursor-pointer hover:bg-surface-container transition-all">
-<div class="flex items-center gap-space-sm">
-<input checked="" class="text-secondary-container focus:ring-0" name="presentation" type="radio" value="25kg">
-<span class="font-subhead-md text-subhead-md text-primary-container">Saco de 25 kg</span>
-</div>
-<span class="font-label-sm text-label-sm text-outline">Polietileno Laminado</span>
-</label>
-<label class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg cursor-pointer hover:bg-surface-container transition-all">
-<div class="flex items-center gap-space-sm">
-<input class="text-secondary-container focus:ring-0" name="presentation" type="radio" value="50kg">
-<span class="font-subhead-md text-subhead-md text-primary-container">Saco de 50 kg</span>
-</div>
-<span class="font-label-sm text-label-sm text-outline">Polipropileno Tejido</span>
-</label>
-<label class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg cursor-pointer hover:bg-surface-container transition-all">
-<div class="flex items-center gap-space-sm">
-<input class="text-secondary-container focus:ring-0" name="presentation" type="radio" value="supersaco">
-<span class="font-subhead-md text-subhead-md text-primary-container">Supersaco (1 Ton)</span>
-</div>
-<span class="font-label-sm text-label-sm text-outline">Con Válvula de Descarga</span>
-</label>
-<label class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg cursor-pointer hover:bg-surface-container transition-all">
-<div class="flex items-center gap-space-sm">
-<input class="text-secondary-container focus:ring-0" name="presentation" type="radio" value="granel">
-<span class="font-subhead-md text-subhead-md text-primary-container">Granel / Tolva</span>
-</div>
-<span class="font-label-sm text-label-sm text-outline">Despacho en Planta</span>
-</label>
-</div>
-<div class="flex flex-col sm:flex-row gap-space-sm pt-space-xs">
-<a class="flex-1 inline-flex items-center justify-center gap-space-xs py-space-sm px-space-md bg-secondary-container text-on-primary font-subhead-md text-subhead-md rounded-lg shadow-sm hover:bg-secondary transition-all" href="#contacto-tecnico">
-<span class="material-symbols-outlined text-subhead-md">request_quote</span>
-<span class="">Cotizar Insumo</span>
-</a>
-<button class="inline-flex items-center justify-center gap-space-xs py-space-sm px-space-md bg-surface-container-lowest text-primary-container font-subhead-md text-subhead-md rounded-lg shadow-sm hover:bg-surface-container transition-all" onclick="alert('Descargando Ficha Técnica Sal de Grano Lavada WD Chemicals (PDF)');" type="button">
-<span class="material-symbols-outlined text-subhead-md">download</span>
-<span class="">Ficha Técnica</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- BLOG -->
+
+
+<!-- CONTACTO -->
+<section class="seccion seccion-oscura" id="contacto">
+  <div class="wrap contacto-grid">
+    <div class="contacto-info">
+      <h2 class="">Cuéntanos qué sistema quieres tratar</h2>
+      <p class="">Escríbenos y te respondemos con una propuesta de equipamiento y automatización en comodato adaptada a tu industria.</p>
+    </div>
+
+    <form class="contacto-form" id="form" novalidate="">
+      <div class="campo-fila">
+        <label for="nombre" class="">Nombre</label>
+        <input class="campo-input" id="nombre" name="nombre" type="text" autocomplete="name" required="" placeholder="Tu nombre">
+      </div>
+      <div class="campo-fila">
+        <label for="empresa" class="">Empresa</label>
+        <input class="campo-input" id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
+      </div>
+      <div class="campo-fila campo-full">
+        <label for="servicio" class="">Servicio de interés</label>
+        <select class="campo-select" id="servicio" name="servicio">
+          <option>Torres de enfriamiento</option>
+          <option>Calderas</option>
+          <option>Chillers</option>
+          <option>Agua potable</option>
+          <option>Sal de grano lavada</option>
+        </select>
+      </div>
+      <div class="campo-fila campo-full">
+        <label for="mensaje" class="">Mensaje</label>
+        <textarea class="campo-textarea" id="mensaje" name="mensaje" rows="4" placeholder="Detalles de tus requerimientos o dudas"></textarea>
+      </div>
+      <div class="form-botones">
+        <button type="button" class="btn btn-cian" data-canal="whatsapp">Enviar por WhatsApp</button>
+        <button type="button" class="btn btn-borde" data-canal="email">Enviar por correo</button>
+        <p class="form-aviso" id="aviso" role="status"></p>
+      </div>
+    </form>
+  </div>
 </section>
-<!-- 6. BANNER DE INVITACIÓN AL BLOG CORPORATIVO -->
-<section class="w-full bg-surface py-space-md">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="w-full bg-primary-container rounded-xl p-space-lg sm:p-space-xl text-on-primary shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-space-lg">
-<!-- Accent decorative element -->
-<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-secondary-container/10 pointer-events-none"></div>
-<div class="flex flex-col gap-space-xs max-w-2xl z-10">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary-container text-subhead-lg">auto_stories</span>
-<span class="font-label-sm text-label-sm text-secondary-container uppercase tracking-wider font-bold">Biblioteca Técnica de Campo</span>
-</div>
-<h3 class="font-headline-lg text-headline-lg text-on-primary tracking-tight">
-            Aprenda de Nuestros Especialistas en Tratamiento de Aguas
-          </h3>
-<p class="font-body-md text-body-md text-on-primary-container">
-            Consulte artículos técnicos especializados, guías de cumplimiento normativo NOM-127, estrategias para maximizar la eficiencia térmica en torres de enfriamiento y las últimas metodologías en regeneración de resinas de intercambio iónico.
-          </p>
-</div>
-<div class="shrink-0 z-10 w-full lg:w-auto">
-<a class="inline-flex items-center justify-center gap-space-sm w-full lg:w-auto px-space-xl py-space-md bg-secondary-container text-on-primary font-subhead-lg text-subhead-lg rounded-lg shadow-md hover:bg-secondary transition-all" data-path="blog-de-expertos" href="#">
-<span class="">Visitar el Blog de Expertos</span>
-<span class="material-symbols-outlined text-subhead-lg">chevron_right</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- 7. SECCIÓN DE CONTACTO / COTIZACIÓN DE COMODATO -->
-<section class="w-full bg-surface py-space-xl" id="contacto-tecnico">
-<div class="max-w-[1320px] mx-auto px-space-lg">
-<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
-<div class="w-full h-1 bg-secondary-container"></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 p-space-lg lg:p-space-xl gap-gutter">
-<!-- Text Info Left (5 Cols) -->
-<div class="lg:col-span-5 flex flex-col gap-space-md">
-<div>
-<span class="font-label-md text-label-md text-secondary-container uppercase tracking-wider">Atención de Ingeniería</span>
-<h2 class="font-headline-lg text-headline-lg text-primary-container tracking-tight mb-space-xs">
-                Solicite Diagnóstico de Agua o Propuesta de Comodato
-              </h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                Un ingeniero especialista en procesos evaluará la calidad de su agua cruda y determinará el dimensionamiento exacto de los trenes de tratamiento sin inversión de capital requerida.
-              </p>
-</div>
-<div class="flex flex-col gap-space-sm p-space-md bg-surface rounded-lg">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary-container">check_circle</span>
-<span class="font-body-sm text-body-sm text-primary-container">Muestreo analítico inicial en planta incluido</span>
-</div>
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary-container">check_circle</span>
-<span class="font-body-sm text-body-sm text-primary-container">Simulación de ahorro en agua de purga y consumo de energía</span>
-</div>
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary-container">check_circle</span>
-<span class="font-body-sm text-body-sm text-primary-container">Plan de contingencia y stock de insumos asegurado</span>
-</div>
-</div>
-<div class="pt-space-xs flex flex-col gap-space-xs">
-<span class="font-label-sm text-label-sm text-outline uppercase">Línea de Asistencia Técnica Directa</span>
-<span class="font-headline-sm text-headline-sm text-primary-container">+52 (55) 5890-4300</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">ingenieria@wdchemicals.com</span>
-</div>
-</div>
-<!-- Form Right (7 Cols) -->
-<div class="lg:col-span-7 flex flex-col justify-center">
-<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault(); alert('Solicitud recibida. Un ingeniero de WD Chemicals se comunicará en menos de 24 horas hábiles.');">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Nombre y Apellido *</label>
-<input class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="Ing. Roberto Mendoza" required="" type="text">
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Empresa / Planta Industrial *</label>
-<input class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="Manufacturas del Norte S.A." required="" type="text">
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Correo Corporativo *</label>
-<input class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="rmendoza@empresa.com" required="" type="email">
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Teléfono de Contacto *</label>
-<input class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="+52 55 0000 0000" required="" type="tel">
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Área de Interés Principal</label>
-<select class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container">
-<option value="comodato">Equipamiento a Comodato Completo</option>
-<option value="torres">Torres de Enfriamiento</option>
-<option value="calderas">Tratamiento de Calderas</option>
-<option value="chillers">Chillers y Circuitos HVAC</option>
-<option value="potable">Potabilización NOM-127</option>
-<option value="insumos">Sal de Grano / Suministro Químico</option>
-</select>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Consumo Estimado (m³/mes o GPM)</label>
-<input class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="Ej. 1,500 m3/mes o 50 GPM" type="text">
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-subhead-md text-subhead-md text-primary-container">Detalles del Sistema Actual o Requerimiento</label>
-<textarea class="p-space-sm rounded-lg bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="Indique parámetros de dureza, conductividad, problemas frecuentes de incrustación o requerimiento de equipo..." rows="3"></textarea>
-</div>
-<div class="flex items-center justify-between pt-space-xs flex-wrap gap-space-sm">
-<span class="font-body-sm text-body-sm text-outline">Tratamiento confidencial bajo acuerdo de datos industriales.</span>
-<button class="inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm bg-secondary-container text-on-primary font-subhead-lg text-subhead-lg rounded-lg shadow-sm hover:bg-secondary transition-all" type="submit">
-<span class="">Solicitar Diagnóstico Técnico</span>
-<span class="material-symbols-outlined text-subhead-md">send</span>
-</button>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div></main><footer class="w-full bg-primary-container text-on-primary-container pt-space-xl pb-space-lg"><div class="max-w-[1320px] mx-auto px-space-lg"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pb-space-xl"><div class="md:col-span-4 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container"><span class="material-symbols-outlined text-headline-sm">science</span></div><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight">WD CHEMICALS</span></div><p class="font-body-md text-body-md text-on-primary-container">Especialistas líderes en formulación química industrial, tratamiento de efluentes, acondicionamiento de calderas y circuitos de enfriamiento con máxima precisión técnica.</p><div class="inline-flex items-center gap-space-xs p-space-sm rounded-lg bg-primary"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span class="font-label-sm text-label-sm text-on-primary tracking-wide uppercase">Certificado NOM-127-SSA1-2021</span></div></div><div class="md:col-span-2 md:col-start-6 flex flex-col gap-space-sm"><span class="font-subhead-md text-subhead-md text-on-primary uppercase tracking-wider mb-space-xs">Navegación</span><a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="inicio" href="#">Inicio</a><a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="servicios" href="#">Servicios</a><a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-colors" data-path="productos" href="#">Productos</a><a class="font-body-md text-body-md text-secondary-container hover:text-on-primary transition-colors font-bold" data-path="blog-de-expertos" href="#">Blog Corporativo</a></div><div class="md:col-span-2 flex flex-col gap-space-sm"><span class="font-subhead-md text-subhead-md text-on-primary uppercase tracking-wider mb-space-xs">Servicios Clave</span><span class="font-body-md text-body-md text-on-primary-container">Osmosis Inversa Industrial</span><span class="font-body-md text-body-md text-on-primary-container">Torres de Enfriamiento</span><span class="font-body-md text-body-md text-on-primary-container">Inhibición de Corrosión</span><span class="font-body-md text-body-md text-on-primary-container">Tratamiento de Lodos</span></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-subhead-md text-subhead-md text-on-primary uppercase tracking-wider mb-space-xs">Contacto &amp; Planta</span><div class="flex items-start gap-space-xs text-on-primary-container"><span class="material-symbols-outlined text-label-md text-secondary-container mt-1">location_on</span><span class="font-body-sm text-body-sm">Paraje #91, Col. el Paraje. C.P. 62573 Jiutepec, Morelos.</span></div><div class="flex items-center gap-space-xs text-on-primary-container"><span class="material-symbols-outlined text-label-md text-secondary-container">call</span><span class="font-body-sm text-body-sm">+52 777-531-8482</span></div><div class="flex items-center gap-space-xs text-on-primary-container"><span class="material-symbols-outlined text-label-md text-secondary-container">mail</span><span class="font-body-sm text-body-sm">contacto@wdchemicals.com</span></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><span class="font-body-sm text-body-sm text-on-primary-container">© 2026 WD Chemicals S.A. de C.V. Todos los derechos reservados.</span><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-primary-container hover:text-on-primary cursor-pointer">Privacidad Corporativa</span><span class="font-label-sm text-label-sm text-on-primary-container hover:text-on-primary cursor-pointer">Normativas Técnicas</span></div></div></div></footer>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap pie-inner">
+    <span class="">Tratamiento de Aguas. Soluciones integrales en comodato.</span>
+    <span class="">© 2026 Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<script>
+// CONFIGURACIÓN
+const CONFIG = {
+  blog: { torres: '', caldera: '', chillers: '', potable: '', sal: '' },
+  contacto: { whatsapp: '5212291234567', email: 'contacto@tratamientoaguas.mx' }
+};
+
+// 1. OLAS EN CANVAS HERO (16 líneas apiladas en la mitad inferior con opacidad creciente)
+(function(){
+  const c = document.getElementById('olas');
+  if(!c) return;
+  const ctx = c.getContext('2d');
+  const hero = c.parentElement;
+  let w, h, dpr, t = 0, mx = 0.5, tx = 0.5, visible = true, raf = 0;
+  const N = 16;
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = c.getBoundingClientRect();
+    w = r.width; h = r.height;
+    c.width = w * dpr; c.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < N; i++){
+      const k = i / (N - 1);
+      // Apiladas en la mitad inferior
+      const base = h * (0.42 + k * 0.52);
+      const amp = 10 + k * 26 + Math.abs(mx - 0.5) * 20;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 8){
+        const y = base
+          + Math.sin(x * 0.004 + t * 0.6 + i * 0.55 + mx * 2) * amp
+          + Math.sin(x * 0.011 - t * 0.9 + i) * amp * 0.35;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = 'rgba(0,163,224,' + (0.06 + k * 0.35) + ')';
+      ctx.lineWidth = 1 + k * 1.5;
+      ctx.stroke();
+    }
+  }
+
+  function loop(){
+    if (!visible) { raf = 0; return; }
+    t += 0.016;
+    mx += (tx - mx) * 0.04;
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    tx = (e.clientX - r.left) / r.width;
+  });
+
+  new IntersectionObserver(entries => {
+    visible = entries[0].isIntersecting;
+    if (visible && !raf) raf = requestAnimationFrame(loop);
+  }).observe(hero);
+
+  raf = requestAnimationFrame(loop);
+})();
+
+// 2. TABS INTERACTIVAS DE SERVICIOS
+(function(){
+  const tabs = [...document.querySelectorAll('.serv-tab')];
+  const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+  function switchTab(id){
+    tabs.forEach((tab, i) => {
+      const match = tab.dataset.id === id;
+      tab.setAttribute('aria-selected', match);
+      tab.tabIndex = match ? 0 : -1;
+      if (panels[i]) panels[i].hidden = !match;
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => switchTab(tab.dataset.id));
+  });
+
+  document.querySelectorAll('[data-ir]').forEach(link => {
+    link.addEventListener('click', e => {
+      switchTab(link.dataset.ir);
+    });
+  });
+})();
+
+// 3. SIMULACIÓN DEL SUAVIZADOR CON INTERCAMBIO IÓNICO
+(function(){
+  const tanque = document.getElementById('tanque');
+  const sw = document.getElementById('swSal');
+  const barra = document.getElementById('barra');
+  const medTxt = document.getElementById('medTxt');
+  const estado = document.getElementById('estado');
+  const demo = document.getElementById('demo');
+  if (!tanque || !sw) return;
+
+  const N = 96;
+  const granos = [];
+  for (let i = 0; i < N; i++){
+    const s = document.createElement('span');
+    s.className = 'grano-esfera';
+    tanque.appendChild(s);
+    granos.push(s);
+  }
+  const orden = [...Array(N).keys()].sort(() => Math.random() - 0.5);
+  const rango = new Array(N);
+  orden.forEach((idx, i) => rango[idx] = i);
+
+  const TEXTOS = {
+    servicioSal: 'El agua atraviesa la resina, que atrapa calcio y magnesio por intercambio iónico. El agua sale blanda.',
+    servicioSin: 'Las resinas se llenan de calcio y magnesio y, sin sal, no hay forma de regenerarlas.',
+    regen: 'La sal regenera las resinas: quedan listas para atrapar más calcio y magnesio.',
+    agotada: 'Sin sal, las resinas se saturan de minerales duros y el sistema pierde su capacidad de funcionar.'
+  };
+
+  let f = 0, sal = true, fase = 'servicio', ultimo = 0, raf = 0, visible = false, nPrev = -1, medPrev = '';
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+  function updateTexto(){
+    let k;
+    if (fase === 'regen') k = 'regen';
+    else if (fase === 'agotada') k = 'agotada';
+    else k = sal ? 'servicioSal' : 'servicioSin';
+    if (estado.textContent !== TEXTOS[k]) estado.textContent = TEXTOS[k];
+  }
+
+  function render(){
+    const n = Math.round(f * N);
+    if (n !== nPrev){
+      granos.forEach((g, i) => g.classList.toggle('dura', rango[i] < n));
+      nPrev = n;
+    }
+    const m = clamp((f - 0.55) / 0.45, 0, 1);
+    barra.style.transform = 'scaleX(' + m + ')';
+    const et = m < 0.2 ? 'Blanda' : (m < 0.7 ? 'Endureciendo' : 'Dura');
+    if (et !== medPrev){ medTxt.textContent = et; medPrev = et; }
+  }
+
+  function setFase(nueva){ fase = nueva; updateTexto(); }
+
+  function frame(ts){
+    if (!visible) { raf = 0; return; }
+    const dt = Math.min((ts - ultimo) / 1000, 0.1);
+    ultimo = ts;
+    if (fase === 'servicio'){
+      f = Math.min(1, f + dt / 7);
+      if (f >= 1) setFase(sal ? 'regen' : 'agotada');
+    } else if (fase === 'regen'){
+      f = Math.max(0, f - dt / 1.8);
+      if (f <= 0) setFase('servicio');
+    }
+    render();
+    raf = requestAnimationFrame(frame);
+  }
+
+  sw.addEventListener('click', () => {
+    sal = !sal;
+    sw.setAttribute('aria-checked', sal);
+    if (sal && fase === 'agotada') setFase('regen');
+    else if (!sal && fase === 'regen') setFase('servicio');
+    updateTexto();
+  });
+
+  render(); updateTexto();
+
+  new IntersectionObserver(entries => {
+    visible = entries[0].isIntersecting;
+    if (visible && !raf){ ultimo = performance.now(); raf = requestAnimationFrame(frame); }
+  }, { threshold: 0.2 }).observe(demo);
+})();
+
+// 4. FORMULARIO DE CONTACTO
+(function(){
+  const form = document.getElementById('form');
+  const aviso = document.getElementById('aviso');
+  if (!form) return;
+
+  function buildMessage(){
+    const d = new FormData(form);
+    const nombre = (d.get('nombre') || '').trim();
+    const empresa = (d.get('empresa') || '').trim();
+    let m = 'Hola, soy ' + nombre + (empresa ? ' de ' + empresa : '') + '. Me interesa tratamiento para: ' + d.get('servicio') + '.';
+    const extra = (d.get('mensaje') || '').trim();
+    if (extra) m += '\n\n' + extra;
+    return m;
+  }
+
+  form.querySelectorAll('[data-canal]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      aviso.textContent = '';
+      if (!form.nombre.value.trim()){
+        aviso.textContent = 'Por favor escribe tu nombre.';
+        form.nombre.focus();
+        return;
+      }
+      const msg = buildMessage();
+      if (btn.dataset.canal === 'whatsapp'){
+        window.open('https://wa.me/' + CONFIG.contacto.whatsapp + '?text=' + encodeURIComponent(msg), '_blank');
+      } else {
+        location.href = 'mailto:' + CONFIG.contacto.email + '?subject=' + encodeURIComponent('Solicitud: ' + form.servicio.value) + '&body=' + encodeURIComponent(msg);
+      }
+    });
+  });
+})();
+</script>
+
+
 
 </body></html>
