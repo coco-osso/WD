@@ -1,14 +1,15 @@
-<!DOCTYPE html><html lang="es-MX" style=""><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tratamiento de Aguas | Torres de enfriamiento, calderas, chillers y agua potable</title>
-<meta name="description" content="Soluciones integrales en tratamiento de aguas industriales: equipamos y automatizamos en comodato. Torres de enfriamiento, calderas, chillers, agua potable y sal de grano lavada.">
-<meta name="theme-color" content="#123252">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6C32 6 14 28 14 40a18 18 0 0 0 36 0C50 28 32 6 32 6Z' fill='%2300A3E0'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap" rel="stylesheet">
+<!DOCTYPE html>
 
+<html lang="es-MX"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Tratamiento de Aguas | Torres de enfriamiento, calderas, chillers y agua potable</title>
+<meta content="Soluciones integrales en tratamiento de aguas industriales: equipamos y automatizamos en comodato. Torres de enfriamiento, calderas, chillers, agua potable y sal de grano lavada." name="description"/>
+<meta content="#123252" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6C32 6 14 28 14 40a18 18 0 0 0 36 0C50 28 32 6 32 6Z' fill='%2300A3E0'/%3E%3C/svg%3E" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
 <style>
 :root {
   --cobalto: #123252;
@@ -36,6 +37,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img, svg, canvas { display: block; max-width: 100%; }
@@ -43,7 +45,7 @@ a { color: inherit; text-decoration: none; }
 h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
 
 .wrap {
-  width: min(var(--max), 100% - 2 * clamp(24px, 5vw, 64px));
+  width: min(var(--max), 100% - 2 * clamp(18px, 4.5vw, 64px));
   margin-inline: auto;
 }
 
@@ -63,19 +65,21 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   align-items: center;
   justify-content: space-between;
   height: 76px;
-  gap: 32px;
+  gap: 20px;
 }
 .marca {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   font-family: var(--sans);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   letter-spacing: -0.01em;
   color: var(--blanco);
+  z-index: 102;
 }
 .marca svg { width: 30px; height: 30px; flex-shrink: 0; }
+
 .nav {
   display: flex;
   align-items: center;
@@ -102,6 +106,78 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 }
 .nav .btn-nav:hover { background: #33b5e5; transform: translateY(-1px); }
 
+/* BOTÓN MENÚ MÓVIL */
+.btn-hamb {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--blanco);
+  z-index: 102;
+  border-radius: 6px;
+}
+.btn-hamb:focus-visible {
+  outline: 2px solid var(--cian);
+}
+.btn-hamb svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* MENÚ MÓVIL DESPLEGABLE */
+.menu-movil-overlay {
+  position: fixed;
+  top: 76px;
+  inset-inline: 0;
+  bottom: 0;
+  background: rgba(12, 34, 57, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 32px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  z-index: 99;
+  border-bottom: 1px solid var(--linea-clara);
+}
+.menu-movil-overlay.activo {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-movil-overlay a {
+  font-family: var(--sans);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(244, 249, 255, 0.95);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(244, 249, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-movil-overlay a:last-of-type {
+  border-bottom: none;
+}
+.menu-movil-overlay .btn-nav-m {
+  margin-top: 12px;
+  background: var(--cian);
+  color: var(--cobalto);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 9999px;
+  border-bottom: none;
+}
+
 /* BOTONES PILL */
 .btn {
   display: inline-flex;
@@ -115,6 +191,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   cursor: pointer;
   border: 1.5px solid transparent;
   transition: all 0.2s ease;
+  text-align: center;
 }
 .btn-cian {
   background: var(--cian);
@@ -139,7 +216,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   position: relative;
   background: var(--cobalto);
   color: var(--blanco);
-  min-height: calc(92vh - 76px);
+  min-height: calc(90vh - 76px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -155,39 +232,40 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .hero-cuerpo {
   position: relative;
   z-index: 2;
-  padding: clamp(64px, 10vw, 110px) 0 48px;
+  padding: clamp(48px, 9vw, 110px) 0 40px;
   max-width: 900px;
 }
 .hero-tag {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.9rem;
+  font-size: clamp(0.78rem, 1.8vw, 0.9rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--cian);
-  margin-bottom: 24px;
+  margin-bottom: clamp(14px, 2.5vw, 24px);
 }
 .hero h1 {
-  font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+  font-size: clamp(2.2rem, 5.2vw, 4.8rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.04;
+  line-height: 1.06;
   color: var(--blanco);
+  word-break: break-word;
 }
 .hero .lead {
-  margin-top: 28px;
+  margin-top: clamp(18px, 3vw, 28px);
   max-width: 650px;
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.08rem, 2vw, 1.45rem);
   color: var(--blanco-glaciar);
-  line-height: 1.5;
+  line-height: 1.55;
   font-weight: 400;
 }
 .hero-acciones {
-  margin-top: 42px;
+  margin-top: clamp(28px, 4vw, 42px);
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
 }
 
 /* Franja inferior del Hero */
@@ -207,13 +285,14 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 20px;
+  padding: clamp(16px, 2vw, 24px) 14px;
   font-family: var(--sans);
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   font-weight: 600;
   color: rgba(244, 249, 255, 0.9);
   transition: all 0.2s ease;
   text-align: center;
+  min-height: 56px;
 }
 .hero-franja-grid a + a {
   border-left: 1px solid var(--linea-clara);
@@ -225,7 +304,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 
 /* SECCIONES BASE */
 .seccion {
-  padding: clamp(80px, 9vw, 130px) 0;
+  padding: clamp(60px, 8vw, 130px) 0;
   scroll-margin-top: 76px;
 }
 .seccion-blanca { background: var(--blanco); color: var(--cobalto); }
@@ -233,18 +312,19 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .seccion-oscura { background: var(--cobalto); color: var(--blanco); }
 
 .seccion-tit-row {
-  margin-bottom: 56px;
+  margin-bottom: clamp(32px, 5vw, 56px);
 }
 .seccion-tit {
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  line-height: 1.1;
   color: inherit;
 }
 .seccion-desc {
-  margin-top: 16px;
+  margin-top: 14px;
   max-width: 580px;
   color: var(--gris-azulado);
-  font-size: 1.18rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.18rem);
+  line-height: 1.55;
 }
 .seccion-oscura .seccion-desc {
   color: rgba(244, 249, 255, 0.8);
@@ -254,24 +334,24 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .nos-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
-  gap: clamp(40px, 7vw, 110px);
+  gap: clamp(32px, 6vw, 110px);
   align-items: start;
 }
 .nos-col-der .lead-parrafo {
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-size: clamp(1.18rem, 2.2vw, 1.7rem);
   line-height: 1.45;
   color: var(--cobalto);
   font-style: normal;
-  margin-bottom: 40px;
+  margin-bottom: clamp(28px, 4vw, 40px);
 }
 .pilares-lista {
   list-style: none;
 }
 .pilar-item {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 28px;
-  padding: 26px 0;
+  grid-template-columns: 190px 1fr;
+  gap: 20px;
+  padding: 22px 0;
   border-top: 1px solid var(--linea-fina);
 }
 .pilar-item:last-child {
@@ -279,23 +359,23 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 }
 .pilar-item b {
   font-family: var(--sans);
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   color: var(--cobalto);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 .pilar-item span {
   color: var(--gris-azulado);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   line-height: 1.55;
 }
 
 /* SECCIÓN SERVICIOS (EXPLORADOR) */
 .servicios-explorador {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: clamp(36px, 6vw, 84px);
-  margin-top: 48px;
+  grid-template-columns: 310px 1fr;
+  gap: clamp(28px, 5vw, 84px);
+  margin-top: clamp(24px, 4vw, 48px);
   align-items: start;
 }
 .serv-tabs {
@@ -308,10 +388,10 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   background: none;
   border: none;
   border-bottom: 1px solid var(--linea-fina);
-  padding: 26px 20px 26px 24px;
+  padding: 24px 18px 24px 22px;
   text-align: left;
   font-family: var(--sans);
-  font-size: 1.35rem;
+  font-size: 1.28rem;
   font-weight: 600;
   color: var(--gris-azulado);
   cursor: pointer;
@@ -342,8 +422,8 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .serv-panel {
   background: var(--blanco);
   border: 1px solid var(--linea-fina);
-  border-radius: 4px;
-  padding: clamp(32px, 5vw, 56px);
+  border-radius: 6px;
+  padding: clamp(24px, 4vw, 56px);
   animation: fadeIn 0.3s ease;
 }
 .serv-panel[hidden] { display: none; }
@@ -356,16 +436,16 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 28px;
-  margin-bottom: 24px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 .serv-panel-cab h3 {
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   color: var(--cobalto);
 }
 .serv-icono {
-  width: 100px;
-  height: 100px;
+  width: clamp(64px, 9vw, 96px);
+  height: clamp(64px, 9vw, 96px);
   flex-shrink: 0;
   color: var(--cobalto);
 }
@@ -374,7 +454,7 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 }
 
 .serv-texto {
-  font-size: 1.15rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.15rem);
   line-height: 1.65;
   color: var(--cobalto);
   max-width: 68ch;
@@ -382,16 +462,16 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 
 .serv-puntos {
   list-style: none;
-  margin: 36px 0 0;
+  margin: clamp(24px, 3.5vw, 36px) 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 40px;
+  column-gap: 36px;
 }
 .serv-puntos li {
-  padding: 14px 0;
+  padding: 12px 0;
   border-top: 1px solid var(--linea-fina);
   font-family: var(--sans);
-  font-size: 1.02rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.02rem);
   font-weight: 500;
   color: var(--cobalto);
   display: flex;
@@ -409,9 +489,9 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 
 .enlace-subrayado {
   display: inline-block;
-  margin-top: 36px;
+  margin-top: clamp(24px, 3.5vw, 36px);
   font-family: var(--sans);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--cian-oscuro);
   text-decoration: underline;
@@ -425,23 +505,23 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .sal-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 96px);
-  margin-top: 48px;
+  gap: clamp(36px, 5vw, 96px);
+  margin-top: clamp(24px, 4vw, 48px);
   align-items: start;
 }
 .sal-col-izq p {
-  font-size: 1.15rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.15rem);
   line-height: 1.7;
   color: var(--cobalto);
 }
 .ficha-datos {
-  margin: 36px 0 0;
+  margin: clamp(24px, 3.5vw, 36px) 0 0;
 }
 .ficha-fila {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 18px;
-  padding: 15px 0;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  padding: 14px 0;
   border-top: 1px solid var(--linea-fina);
 }
 .ficha-fila:last-child {
@@ -450,31 +530,32 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .ficha-fila dt {
   font-family: var(--sans);
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   color: var(--gris-azulado);
 }
 .ficha-fila dd {
-  font-size: 1.02rem;
+  font-size: 1rem;
   color: var(--cobalto);
 }
 
 .sal-col-der h3 {
-  font-size: clamp(1.5rem, 2.3vw, 2.05rem);
-  margin-bottom: 18px;
+  font-size: clamp(1.4rem, 2.3vw, 2.05rem);
+  margin-bottom: 16px;
   color: var(--cobalto);
 }
 .sal-col-der p {
   color: var(--cobalto);
   line-height: 1.65;
+  font-size: clamp(1.02rem, 1.5vw, 1.125rem);
 }
 
 /* CAJA DEMO SUAVIZADOR */
 .demo-box {
-  margin-top: 32px;
+  margin-top: 28px;
   background: var(--blanco);
   border: 1px solid var(--gris-acero);
-  border-radius: 4px;
-  padding: clamp(24px, 3.5vw, 36px);
+  border-radius: 6px;
+  padding: clamp(20px, 3.5vw, 36px);
 }
 .demo-header {
   display: flex;
@@ -491,8 +572,9 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   cursor: pointer;
   font-family: var(--sans);
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.02rem);
   color: var(--cobalto);
+  user-select: none;
 }
 .switch-pista {
   width: 52px;
@@ -521,31 +603,40 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   transform: translateX(22px);
 }
 
+/* TANQUE CON CUADRÍCULA FLUIDA DE ESFERAS (96 BOLAS DE RESINA) */
 .tanque-grafico {
-  margin-top: 24px;
+  margin-top: 22px;
   border: 2px solid var(--cobalto);
-  border-radius: 16px 16px 42px 42px;
-  padding: 20px 18px 26px;
+  border-radius: 22px 22px 56px 56px;
+  padding: clamp(18px, 2.5vw, 24px);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: clamp(4px, 0.7vw, 7px);
-  background: linear-gradient(180deg, var(--blanco-glaciar) 0%, rgba(244, 249, 255, 0.4) 100%);
+  gap: clamp(4px, 0.75vw, 8px);
+  background: linear-gradient(180deg, var(--blanco-glaciar) 0%, rgba(244, 249, 255, 0.6) 100%);
+  box-shadow: inset 0 2px 6px rgba(18, 50, 82, 0.05);
+  align-items: center;
+  justify-items: center;
 }
 .grano-esfera {
   position: relative;
+  width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 30%, #e0f6fd, var(--cian) 55%, var(--cian-oscuro));
-  box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+  background: radial-gradient(circle at 35% 30%, #e0f6fd, var(--cian) 60%, var(--cian-oscuro));
+  box-shadow: 0 2px 4px rgba(18, 50, 82, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.85);
+  min-width: 10px;
+  min-height: 10px;
+  transition: transform 0.2s ease;
 }
 .grano-esfera::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 30%, #e6eaf0, var(--gris-acero) 55%, #5d6a82);
+  background: radial-gradient(circle at 35% 30%, #f4f6f9, var(--gris-acero) 62%, #4b5d75);
+  box-shadow: 0 2px 4px rgba(18, 50, 82, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.6);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 .grano-esfera.dura::after {
   opacity: 1;
@@ -554,10 +645,10 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .demo-leyenda {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
-  margin-top: 18px;
+  gap: 10px 20px;
+  margin-top: 16px;
   font-family: var(--sans);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
   font-weight: 600;
   color: var(--gris-azulado);
 }
@@ -570,24 +661,28 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--cian);
+  background: radial-gradient(circle at 35% 30%, #e0f6fd, var(--cian) 60%, var(--cian-oscuro));
+  box-shadow: 0 1px 3px rgba(18, 50, 82, 0.2);
+  flex-shrink: 0;
 }
 .punto-gris {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--gris-acero);
+  background: radial-gradient(circle at 35% 30%, #f4f6f9, var(--gris-acero) 62%, #4b5d75);
+  box-shadow: 0 1px 3px rgba(18, 50, 82, 0.15);
+  flex-shrink: 0;
 }
 
 .medidor-area {
-  margin-top: 24px;
+  margin-top: 22px;
 }
 .medidor-head {
   display: flex;
   justify-content: space-between;
   font-family: var(--sans);
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: clamp(0.9rem, 1.4vw, 0.98rem);
   margin-bottom: 8px;
   color: var(--cobalto);
 }
@@ -606,75 +701,34 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   transition: transform 0.25s linear;
 }
 .demo-estado-texto {
-  margin-top: 18px;
-  min-height: 4em;
-  font-size: 1.05rem;
+  margin-top: 16px;
+  min-height: 3.8em;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
   color: var(--cobalto);
   line-height: 1.5;
 }
 .demo-pie-nota {
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: var(--sans);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--gris-azulado);
-}
-
-/* BLOG */
-.blog-lista {
-  list-style: none;
-  margin-top: 48px;
-  border-bottom: 1px solid var(--linea-fina);
-}
-.blog-item {
-  border-top: 1px solid var(--linea-fina);
-}
-.blog-enlace {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 24px;
-  padding: 30px 0;
-  transition: all 0.2s ease;
-}
-.blog-enlace h4 {
-  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
-  color: var(--cobalto);
-  transition: color 0.2s ease;
-}
-.blog-enlace p {
-  margin-top: 6px;
-  font-size: 1.05rem;
-  color: var(--gris-azulado);
-}
-.blog-icono {
-  width: 32px;
-  height: 32px;
-  color: var(--cian-oscuro);
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-.blog-enlace:hover h4 {
-  color: var(--cian-oscuro);
-}
-.blog-enlace:hover .blog-icono {
-  transform: translate(3px, -3px);
 }
 
 /* CONTACTO */
 .contacto-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
-  gap: clamp(40px, 7vw, 110px);
+  gap: clamp(36px, 6vw, 110px);
   align-items: start;
 }
 .contacto-info h2 {
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  line-height: 1.1;
   color: var(--blanco);
 }
 .contacto-info p {
-  margin-top: 24px;
-  font-size: 1.2rem;
+  margin-top: clamp(16px, 2.5vw, 24px);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
   color: rgba(244, 249, 255, 0.85);
   max-width: 44ch;
   line-height: 1.6;
@@ -683,30 +737,30 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 .contacto-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px 30px;
+  gap: 28px 24px;
 }
 .campo-fila {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 .campo-full {
   grid-column: 1 / -1;
 }
 .campo-fila label {
   font-family: var(--sans);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(244, 249, 255, 0.85);
+  color: rgba(244, 249, 255, 0.88);
 }
 .campo-input, .campo-select, .campo-textarea {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--blanco);
   background: transparent;
   border: none;
   border-bottom: 1.5px solid rgba(244, 249, 255, 0.35);
-  padding: 10px 0;
+  padding: 8px 0;
   border-radius: 0;
   width: 100%;
   outline: none;
@@ -714,13 +768,14 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
 }
 .campo-select {
   cursor: pointer;
+  background: transparent;
 }
 .campo-select option {
   background: var(--cobalto);
   color: var(--blanco);
 }
 .campo-textarea {
-  min-height: 110px;
+  min-height: 96px;
   resize: vertical;
 }
 .campo-input:focus, .campo-select:focus, .campo-textarea:focus {
@@ -730,23 +785,24 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 .form-aviso {
   font-family: var(--sans);
   font-size: 0.95rem;
   color: var(--cian);
+  width: 100%;
 }
 
 /* PIE DE PÁGINA */
 .pie {
   background: var(--cobalto-oscuro);
   color: var(--blanco-glaciar);
-  padding: 40px 0;
+  padding: clamp(28px, 4vw, 40px) 0;
   font-family: var(--sans);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   border-top: 1px solid rgba(244, 249, 255, 0.1);
 }
 .pie-inner {
@@ -754,16 +810,48 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
 }
 
-/* RESPONSIVE DESKTOP/GENERAL */
-@media (max-width: 960px) {
-  .nos-grid, .contacto-grid, .sal-grid {
+/* ========================================================
+   RESPONSIVE DESIGN (TABLETS & MÓVILES)
+   ======================================================== */
+
+/* TABLETAS GRANDES / DESKTOPS PEQUEÑOS (<= 1024px) */
+@media (max-width: 1024px) {
+  .nos-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .sal-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .tanque-grafico {
+    grid-template-columns: repeat(12, 1fr);
   }
   .servicios-explorador {
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+  }
+  .serv-tab {
+    font-size: 1.15rem;
+    padding: 20px 14px;
+  }
+}
+
+/* TABLETAS / PANTALLAS MEDIANAS (< 900px) */
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .btn-hamb { display: block; }
+  
+  .servicios-explorador {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   .serv-tabs {
     flex-direction: row;
@@ -771,11 +859,18 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
     border-top: none;
     border-bottom: 1px solid var(--linea-fina);
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+    padding-bottom: 2px;
   }
+  .serv-tabs::-webkit-scrollbar { display: none; }
   .serv-tab {
     white-space: nowrap;
     border-bottom: none;
-    padding: 16px 20px;
+    padding: 14px 18px;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    border-radius: 6px 6px 0 0;
   }
   .serv-tab::before {
     top: auto;
@@ -789,356 +884,483 @@ h1, h2, h3, h4 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.
   .serv-tab[aria-selected="true"]::before {
     transform: scaleX(1);
   }
+  
   .hero-franja-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-franja-grid a:nth-child(2) {
+    border-left: 1px solid var(--linea-clara);
   }
   .hero-franja-grid a:nth-child(3) {
     border-left: none;
-  }
-  .hero-franja-grid a:nth-child(n+3) {
     border-top: 1px solid var(--linea-clara);
+  }
+  .hero-franja-grid a:nth-child(4) {
+    border-top: 1px solid var(--linea-clara);
+    border-left: 1px solid var(--linea-clara);
+  }
+
+  .tanque-grafico {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 16px;
+    gap: 5px;
+  }
+}
+
+/* MÓVILES Y CELULARES PEQUEÑOS (< 768px) */
+@media (max-width: 768px) {
+  .hero-acciones {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-acciones .btn {
+    width: 100%;
+  }
+  
+  .pilar-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 18px 0;
+  }
+  
+  .serv-puntos {
+    grid-template-columns: 1fr;
+    margin-top: 22px;
+  }
+  
+  .ficha-fila {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 12px 0;
+  }
+  
+  .contacto-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .form-botones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-botones .btn {
+    width: 100%;
+  }
+
+  .tanque-grafico {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3px;
+    padding: 12px;
+  }
+
+  .pie-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* CELULARES MUY COMPACTOS (< 420px) */
+@media (max-width: 420px) {
+  .hero-franja-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-franja-grid a {
+    border-left: none !important;
+  }
+  .hero-franja-grid a + a {
+    border-top: 1px solid var(--linea-clara) !important;
+  }
+  .serv-panel {
+    padding: 20px 16px;
+  }
+  .demo-box {
+    padding: 18px 14px;
+  }
+  .tanque-grafico {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
   }
 }
 </style>
 </head>
-
 <body>
-
 <!-- ENCABEZADO FIJO -->
 <header class="cab">
-  <div class="wrap cab-in">
-    <a class="marca" href="#inicio">
-      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <path d="M32 6C32 6 14 28 14 40a18 18 0 0 0 36 0C50 28 32 6 32 6Z" fill="#00A3E0"></path>
-        <path d="M24 42c3 4 12 5 16-2" stroke="#123252" stroke-width="3.5" stroke-linecap="round"></path>
-      </svg>
-      <span class="">WD Chemicals</span>
-    </a>
-    <nav class="nav">
-      <a href="#nosotros" class="">Nosotros</a>
-      <a href="#servicios" class="">Servicios</a>
-      <a href="#sal" class="">Sal de grano</a>
-      
-      <a class="btn-nav" href="#contacto">Contacto</a>
-    </nav>
-  </div>
+<div class="wrap cab-in">
+<a class="marca" href="#inicio">
+<svg aria-hidden="true" fill="none" viewbox="0 0 64 64">
+<path d="M32 6C32 6 14 28 14 40a18 18 0 0 0 36 0C50 28 32 6 32 6Z" fill="#00A3E0"></path>
+<path d="M24 42c3 4 12 5 16-2" stroke="#123252" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span>WD Chemicals</span>
+</a>
+<nav aria-label="Navegación principal" class="nav">
+<a href="#nosotros">Nosotros</a>
+<a href="#servicios">Servicios</a>
+<a href="#sal">Sal de grano</a>
+<a class="btn-nav" href="#contacto">Contacto</a>
+</nav>
+<!-- Botón Hamburguesa Móvil -->
+<button aria-controls="menu-movil" aria-expanded="false" aria-label="Abrir menú de navegación" class="btn-hamb" id="btnHamb" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path class="hamb-lineas" d="M4 6h16M4 12h16M4 18h16"></path>
+</svg>
+</button>
+</div>
+<!-- Menú móvil desplegable -->
+<nav aria-label="Menú móvil" class="menu-movil-overlay" id="menu-movil">
+<a class="nav-enlace-m" href="#nosotros">Nosotros <span>→</span></a>
+<a class="nav-enlace-m" href="#servicios">Servicios <span>→</span></a>
+<a class="nav-enlace-m" href="#sal">Sal de grano <span>→</span></a>
+<a class="nav-enlace-m btn-nav-m" href="#contacto">Contacto</a>
+</nav>
 </header>
-
 <main>
-
 <!-- HERO CON CANVAS OLAS CIAN Y COBALTO -->
 <section class="hero" id="inicio">
-  <canvas id="olas" aria-hidden="true" width="1280" height="866"></canvas>
-  <div class="wrap hero-cuerpo">
-    <span class="hero-tag">Tratamiento Integral de Agua Industrial</span>
-    <h1 class="">Equipamos y automatizamos tu tratamiento de agua</h1>
-    <p class="lead">Soluciones integrales para torres de enfriamiento, calderas, chillers y agua potable, con el equipo en comodato.</p>
-    <div class="hero-acciones">
-      <a class="btn btn-cian" href="#servicios">Ver servicios</a>
-      <a class="btn btn-borde" href="#contacto">Solicitar información</a>
-    </div>
-  </div>
-
-  <div class="hero-franja">
-    <div class="wrap hero-franja-grid">
-      <a href="#servicios" data-ir="torres" class="">Torres de enfriamiento</a>
-      <a href="#servicios" data-ir="caldera" class="">Calderas</a>
-      <a href="#servicios" data-ir="chillers" class="">Chillers</a>
-      <a href="#servicios" data-ir="potable" class="">Agua potable</a>
-    </div>
-  </div>
+<canvas aria-hidden="true" id="olas"></canvas>
+<div class="wrap hero-cuerpo">
+<span class="hero-tag">Tratamiento Integral de Agua Industrial</span>
+<h1>Equipamos y automatizamos tu tratamiento de agua</h1>
+<p class="lead">Somos una empresa especializada en soluciones integrales para el tratamiento de aguas. Diseñamos, suministramos, equipamos y automatizamos sistemas de tratamiento, proporcionando soluciones eficientes y confiables que se adaptan a las necesidades de cada cliente y optimizan su operación.</p>
+<div class="hero-acciones">
+<a class="btn btn-cian" href="#servicios">Ver servicios</a>
+<a class="btn btn-borde" href="#contacto">Solicitar información</a>
+</div>
+</div>
+<div class="hero-franja">
+<div class="wrap hero-franja-grid">
+<a data-ir="torres" href="#servicios">Torres de enfriamiento</a>
+<a data-ir="caldera" href="#servicios">Calderas</a>
+<a data-ir="chillers" href="#servicios">Chillers</a>
+<a data-ir="potable" href="#servicios">Agua potable</a>
+</div>
+</div>
 </section>
-
 <!-- NOSOTROS -->
 <section class="seccion seccion-blanca" id="nosotros">
-  <div class="wrap nos-grid">
-    <div>
-      <h2 class="seccion-tit">Un servicio integral para tu agua</h2>
-    </div>
-    <div class="nos-col-der">
-      <p class="lead-parrafo">Somos una empresa dedicada a prestar soluciones en tratamiento de aguas para brindar un servicio integral, donde equipamos y automatizamos en comodato.</p>
-      <ul class="pilares-lista">
-        <li class="pilar-item">
-          <b>Equipamos</b>
-          <span class="">Suministramos el equipo que tu sistema necesita para tratar el agua.</span>
-        </li>
-        <li class="pilar-item">
-          <b>Automatizamos</b>
-          <span class="">El tratamiento funciona de forma automatizada, sin depender de ajustes manuales constantes.</span>
-        </li>
-        <li class="pilar-item">
-          <b>En comodato</b>
-          <span class="">Los equipos se entregan bajo un esquema de comodato.</span>
-        </li>
-      </ul>
-    </div>
-  </div>
+<div class="wrap nos-grid">
+<div>
+<h2 class="seccion-tit">Un servicio integral para tu agua</h2>
+</div>
+<div class="nos-col-der">
+<p class="lead-parrafo">Somos una empresa dedicada a prestar soluciones en tratamiento de aguas para brindar un servicio integral, donde equipamos y automatizamos en comodato.</p>
+<ul class="pilares-lista">
+<li class="pilar-item">
+<b>Equipamos</b>
+<span>Suministramos el equipo que tu sistema necesita para tratar el agua.</span>
+</li>
+<li class="pilar-item">
+<b>Automatizamos</b>
+<span>El tratamiento funciona de forma automatizada, sin depender de ajustes manuales constantes.</span>
+</li>
+<li class="pilar-item">
+<b>En comodato</b>
+<span>Los equipos se entregan bajo un esquema de comodato.</span>
+</li>
+</ul>
+</div>
+</div>
 </section>
-
 <!-- SERVICIOS CON EXPLORADOR INTERACTIVO -->
 <section class="seccion seccion-glaciar" id="servicios">
-  <div class="wrap">
-    <div class="seccion-tit-row">
-      <h2 class="seccion-tit">Servicios</h2>
-      <p class="seccion-desc">Cuatro sistemas donde el agua bien tratada protege tus equipos, tus costos y a las personas.</p>
-    </div>
-
-    <div class="servicios-explorador">
-      <div class="serv-tabs" role="tablist" aria-label="Servicios industriales" aria-orientation="vertical">
-        <button class="serv-tab" role="tab" id="tab-torres" aria-controls="panel-torres" aria-selected="false" data-id="torres" tabindex="-1">Torres de enfriamiento</button>
-        <button class="serv-tab" role="tab" id="tab-caldera" aria-controls="panel-caldera" aria-selected="false" tabindex="-1" data-id="caldera">Calderas</button>
-        <button class="serv-tab" role="tab" id="tab-chillers" aria-controls="panel-chillers" aria-selected="false" tabindex="-1" data-id="chillers">Chillers</button>
-        <button class="serv-tab" role="tab" id="tab-potable" aria-controls="panel-potable" aria-selected="true" tabindex="0" data-id="potable">Agua potable</button>
-      </div>
-
-      <div class="serv-paneles-contenedor">
-        <!-- Panel 1: Torres de enfriamiento -->
-        <article class="serv-panel" role="tabpanel" id="panel-torres" aria-labelledby="tab-torres" hidden="">
-          <div class="serv-panel-cab">
-            <h3 class="">Torres de enfriamiento</h3>
-            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <ellipse cx="100" cy="76" rx="46" ry="9"></ellipse>
-              <path d="M54 76 Q86 128 62 180 H138 Q114 128 146 76"></path>
-              <path d="M70 158 H130 M66 168 H134"></path>
-              <path class="acento" d="M82 58 q-8-10 0-20 q8-10 0-20 M102 54 q-8-10 0-20 q8-10 0-20 M122 58 q-8-10 0-20 q8-10 0-20"></path>
-            </svg>
-          </div>
-          <p class="serv-texto">El tratamiento del agua en las torres de enfriamiento es crucial para prevenir la corrosión, la formación de incrustaciones y el crecimiento microbiano, lo que garantiza una alta eficiencia energética, prolonga la vida útil del equipo, reduce los costos de mantenimiento y evita la proliferación de patógenos como la bacteria <i>Legionella</i>.</p>
-          <ul class="serv-puntos">
-            <li class="">Previene corrosión e incrustaciones</li>
-            <li class="">Frena el crecimiento microbiano</li>
-            <li class="">Evita la proliferación de <i>Legionella</i></li>
-            <li class="">Alta eficiencia energética</li>
-            <li class="">Prolonga la vida útil del equipo</li>
-            <li class="">Reduce los costos de mantenimiento</li>
-          </ul>
-          <a class="enlace-subrayado" href="#blog" data-blog="torres">Leer más en el blog</a>
-        </article>
-
-        <!-- Panel 2: Calderas -->
-        <article class="serv-panel" role="tabpanel" id="panel-caldera" aria-labelledby="tab-caldera" hidden="">
-          <div class="serv-panel-cab">
-            <h3 class="">Calderas</h3>
-            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="34" y="92" width="132" height="80" rx="20"></rect>
-              <path d="M132 92 V58 H150 V92"></path>
-              <path class="acento" d="M141 46 q-8-8 0-16 q8-8 0-16"></path>
-              <circle cx="66" cy="122" r="11"></circle>
-              <path d="M66 122 L72 115"></path>
-              <path class="acento" d="M112 160 c-16-12-8-26 0-38 c4 9 18 15 13 29 c-2 6-8 9-13 9z"></path>
-            </svg>
-          </div>
-          <p class="serv-texto">El tratamiento de agua en calderas es fundamental para prevenir la corrosión y las incrustaciones, mejorar la eficiencia energética, prolongar la vida útil del equipo, asegurar la calidad del vapor y reducir los costos de operación y mantenimiento. Al eliminar impurezas dañinas del agua, se garantiza un funcionamiento seguro y rentable del sistema, minimizando fallos y paradas imprevistas.</p>
-          <ul class="serv-puntos">
-            <li class="">Previene corrosión e incrustaciones</li>
-            <li class="">Mejora la eficiencia energética</li>
-            <li class="">Prolonga la vida útil del equipo</li>
-            <li class="">Asegura la calidad del vapor</li>
-            <li class="">Reduce costos de operación y mantenimiento</li>
-            <li class="">Minimiza fallos y paradas imprevistas</li>
-          </ul>
-          <a class="enlace-subrayado" href="#blog" data-blog="caldera">Leer más en el blog</a>
-        </article>
-
-        <!-- Panel 3: Chillers -->
-        <article class="serv-panel" role="tabpanel" id="panel-chillers" aria-labelledby="tab-chillers" hidden="">
-          <div class="serv-panel-cab">
-            <h3 class="">Chillers</h3>
-            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="28" y="104" width="144" height="66" rx="8"></rect>
-              <circle cx="70" cy="80" r="20"></circle>
-              <circle cx="130" cy="80" r="20"></circle>
-              <path class="acento" d="M70 66 V94 M56 80 H84 M130 66 V94 M116 80 H144"></path>
-              <path d="M28 150 H12 M172 150 H188"></path>
-              <path d="M50 130 H150"></path>
-            </svg>
-          </div>
-          <p class="serv-texto">El tratamiento de agua en los chillers es primordial para mantener la eficiencia energética, prolongar la vida útil del equipo y asegurar su correcto funcionamiento, ya que previene la acumulación de incrustaciones, la corrosión y el crecimiento de bacterias y algas, problemas que pueden generar sobrecalentamiento, reducir la transferencia de calor y prever paros técnicos.</p>
-          <ul class="serv-puntos">
-            <li class="">Previene incrustaciones y corrosión</li>
-            <li class="">Controla el crecimiento de bacterias y algas</li>
-            <li class="">Evita el sobrecalentamiento</li>
-            <li class="">Mantiene la transferencia de calor</li>
-            <li class="">Mantiene la eficiencia energética</li>
-            <li class="">Prolonga la vida útil del equipo</li>
-          </ul>
-          <a class="enlace-subrayado" href="#blog" data-blog="chillers">Leer más en el blog</a>
-        </article>
-
-        <!-- Panel 4: Agua potable -->
-        <article class="serv-panel" role="tabpanel" id="panel-potable" aria-labelledby="tab-potable">
-          <div class="serv-panel-cab">
-            <h3 class="">Agua potable</h3>
-            <svg class="serv-icono" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M100 22 C100 22 52 86 52 124 a48 48 0 0 0 96 0 C148 86 100 22 100 22Z"></path>
-              <path class="acento" d="M78 128 l16 16 l30-34"></path>
-            </svg>
-          </div>
-          <p class="serv-texto">La cloración del agua potable en México es vital para la salud pública porque elimina bacterias, virus y otros microorganismos patógenos que causan enfermedades gastrointestinales como cólera, tifoidea y disentería, garantizando así la seguridad del agua de consumo. El cloro actúa como desinfectante con un fuerte poder residual, protegiendo contra la recontaminación en las redes de suministro y cumpliendo con normativas como la NOM-127-SSA1-2021.</p>
-          <ul class="serv-puntos">
-            <li class="">Elimina bacterias, virus y otros patógenos</li>
-            <li class="">Previene cólera, tifoidea y disentería</li>
-            <li class="">Fuerte poder residual en las redes de suministro</li>
-            <li class="">Protege contra la recontaminación</li>
-            <li class="">Cumple con la NOM-127-SSA1-2021</li>
-            <li class="">Garantiza la seguridad del agua de consumo</li>
-          </ul>
-          <a class="enlace-subrayado" href="#blog" data-blog="potable">Leer más en el blog</a>
-        </article>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="seccion-tit-row">
+<h2 class="seccion-tit">Servicios</h2>
+<p class="seccion-desc">Cuatro sistemas donde el agua bien tratada protege tus equipos, tus costos y a las personas.</p>
+</div>
+<div class="servicios-explorador">
+<div aria-label="Servicios industriales" aria-orientation="vertical" class="serv-tabs" role="tablist">
+<button aria-controls="panel-torres" aria-selected="false" class="serv-tab" data-id="torres" id="tab-torres" role="tab" tabindex="-1">Torres de enfriamiento</button>
+<button aria-controls="panel-caldera" aria-selected="false" class="serv-tab" data-id="caldera" id="tab-caldera" role="tab" tabindex="-1">Calderas</button>
+<button aria-controls="panel-chillers" aria-selected="false" class="serv-tab" data-id="chillers" id="tab-chillers" role="tab" tabindex="-1">Chillers</button>
+<button aria-controls="panel-potable" aria-selected="true" class="serv-tab" data-id="potable" id="tab-potable" role="tab" tabindex="0">Agua potable</button>
+</div>
+<div class="serv-paneles-contenedor">
+<!-- Panel 1: Torres de enfriamiento -->
+<article aria-labelledby="tab-torres" class="serv-panel" hidden="" id="panel-torres" role="tabpanel">
+<div class="serv-panel-cab">
+<h3>Torres de enfriamiento</h3>
+<svg aria-hidden="true" class="serv-icono" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 200 200">
+<ellipse cx="100" cy="76" rx="46" ry="9"></ellipse>
+<path d="M54 76 Q86 128 62 180 H138 Q114 128 146 76"></path>
+<path d="M70 158 H130 M66 168 H134"></path>
+<path class="acento" d="M82 58 q-8-10 0-20 q8-10 0-20 M102 54 q-8-10 0-20 q8-10 0-20 M122 58 q-8-10 0-20 q8-10 0-20"></path>
+</svg>
+</div>
+<p class="serv-texto">El tratamiento del agua en las torres de enfriamiento es crucial para prevenir la corrosión, la formación de incrustaciones y el crecimiento microbiano, lo que garantiza una alta eficiencia energética, prolonga la vida útil del equipo, reduce los costos de mantenimiento y evita la proliferación de patógenos como la bacteria <i>Legionella</i>.</p>
+<ul class="serv-puntos">
+<li>Previene corrosión e incrustaciones</li>
+<li>Frena el crecimiento microbiano</li>
+<li>Evita la proliferación de <i>Legionella</i></li>
+<li>Alta eficiencia energética</li>
+<li>Prolonga la vida útil del equipo</li>
+<li>Reduce los costos de mantenimiento</li>
+</ul>
+<a class="enlace-subrayado" data-blog="torres" href="#blog">Leer más en el blog</a>
+</article>
+<!-- Panel 2: Calderas -->
+<article aria-labelledby="tab-caldera" class="serv-panel" hidden="" id="panel-caldera" role="tabpanel">
+<div class="serv-panel-cab">
+<h3>Calderas</h3>
+<svg aria-hidden="true" class="serv-icono" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 200 200">
+<rect height="80" rx="20" width="132" x="34" y="92"></rect>
+<path d="M132 92 V58 H150 V92"></path>
+<path class="acento" d="M141 46 q-8-8 0-16 q8-8 0-16"></path>
+<circle cx="66" cy="122" r="11"></circle>
+<path d="M66 122 L72 115"></path>
+<path class="acento" d="M112 160 c-16-12-8-26 0-38 c4 9 18 15 13 29 c-2 6-8 9-13 9z"></path>
+</svg>
+</div>
+<p class="serv-texto">El tratamiento de agua en calderas es fundamental para prevenir la corrosión y las incrustaciones, mejorar la eficiencia energética, prolongar la vida útil del equipo, asegurar la calidad del vapor y reducir los costos de operación y mantenimiento. Al eliminar impurezas dañinas del agua, se garantiza un funcionamiento seguro y rentable del sistema, minimizando fallos y paradas imprevistas.</p>
+<ul class="serv-puntos">
+<li>Previene corrosión e incrustaciones</li>
+<li>Mejora la eficiencia energética</li>
+<li>Prolonga la vida útil del equipo</li>
+<li>Asegura la calidad del vapor</li>
+<li>Reduce costos de operación y mantenimiento</li>
+<li>Minimiza fallos y paradas imprevistas</li>
+</ul>
+<a class="enlace-subrayado" data-blog="caldera" href="#blog">Leer más en el blog</a>
+</article>
+<!-- Panel 3: Chillers -->
+<article aria-labelledby="tab-chillers" class="serv-panel" hidden="" id="panel-chillers" role="tabpanel">
+<div class="serv-panel-cab">
+<h3>Chillers</h3>
+<svg aria-hidden="true" class="serv-icono" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 200 200">
+<rect height="66" rx="8" width="144" x="28" y="104"></rect>
+<circle cx="70" cy="80" r="20"></circle>
+<circle cx="130" cy="80" r="20"></circle>
+<path class="acento" d="M70 66 V94 M56 80 H84 M130 66 V94 M116 80 H144"></path>
+<path d="M28 150 H12 M172 150 H188"></path>
+<path d="M50 130 H150"></path>
+</svg>
+</div>
+<p class="serv-texto">El tratamiento de agua en los chillers es primordial para mantener la eficiencia energética, prolongar la vida útil del equipo y asegurar su correcto funcionamiento, ya que previene la acumulación de incrustaciones, la corrosión y el crecimiento de bacterias y algas, problemas que pueden generar sobrecalentamiento, reducir la transferencia de calor y prever paros técnicos.</p>
+<ul class="serv-puntos">
+<li>Previene incrustaciones y corrosión</li>
+<li>Controla el crecimiento de bacterias y algas</li>
+<li>Evita el sobrecalentamiento</li>
+<li>Mantiene la transferencia de calor</li>
+<li>Mantiene la eficiencia energética</li>
+<li>Prolonga la vida útil del equipo</li>
+</ul>
+<a class="enlace-subrayado" data-blog="chillers" href="#blog">Leer más en el blog</a>
+</article>
+<!-- Panel 4: Agua potable -->
+<article aria-labelledby="tab-potable" class="serv-panel" id="panel-potable" role="tabpanel">
+<div class="serv-panel-cab">
+<h3>Agua potable</h3>
+<svg aria-hidden="true" class="serv-icono" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 200 200">
+<path d="M100 22 C100 22 52 86 52 124 a48 48 0 0 0 96 0 C148 86 100 22 100 22Z"></path>
+<path class="acento" d="M78 128 l16 16 l30-34"></path>
+</svg>
+</div>
+<p class="serv-texto">La cloración del agua potable en México es vital para la salud pública porque elimina bacterias, virus y otros microorganismos patógenos que causan enfermedades gastrointestinales como cólera, tifoidea y disentería, garantizando así la seguridad del agua de consumo. El cloro actúa como desinfectante con un fuerte poder residual, protegiendo contra la recontaminación en las redes de suministro y cumpliendo con normativas como la NOM-127-SSA1-2021.</p>
+<ul class="serv-puntos">
+<li>Elimina bacterias, virus y otros patógenos</li>
+<li>Previene cólera, tifoidea y disentería</li>
+<li>Fuerte poder residual en las redes de suministro</li>
+<li>Protege contra la recontaminación</li>
+<li>Cumple con la NOM-127-SSA1-2021</li>
+<li>Garantiza la seguridad del agua de consumo</li>
+</ul>
+<a class="enlace-subrayado" data-blog="potable" href="#blog">Leer más en el blog</a>
+</article>
+</div>
+</div>
+</div>
 </section>
-
 <!-- SAL DE GRANO LAVADA -->
 <section class="seccion seccion-blanca" id="sal">
-  <div class="wrap">
-    <div class="seccion-tit-row">
-      <h2 class="seccion-tit">Sal de grano lavada</h2>
-    </div>
-
-    <div class="sal-grid">
-      <!-- Columna izquierda: Información y ficha -->
-      <div class="sal-col-izq">
-        <p class="">La sal de grano lavada es cloruro de sodio en forma granular gruesa de alta pureza, obtenida de la evaporación solar del agua de mar. Se somete a un proceso de lavado y tamizado para eliminar impurezas, lo que la hace ideal para aplicaciones en la industria alimentaria, como conservante y realzador de sabor, así como para tratamientos de agua, curtido de pieles y fabricación de productos cárnicos y encurtidos.</p>
-
-        <dl class="ficha-datos">
-          <div class="ficha-fila">
-            <dt>Composición</dt>
-            <dd>Cloruro de sodio</dd>
-          </div>
-          <div class="ficha-fila">
-            <dt>Presentación</dt>
-            <dd>Granular gruesa, de alta pureza</dd>
-          </div>
-          <div class="ficha-fila">
-            <dt>Origen</dt>
-            <dd>Evaporación solar del agua de mar</dd>
-          </div>
-          <div class="ficha-fila">
-            <dt>Proceso</dt>
-            <dd>Lavado y tamizado para eliminar impurezas</dd>
-          </div>
-          <div class="ficha-fila">
-            <dt>Aplicaciones</dt>
-            <dd>Industria alimentaria (conservante y realzador de sabor), tratamientos de agua, curtido de pieles, productos cárnicos y encurtidos</dd>
-          </div>
-        </dl>
-
-        <a class="enlace-subrayado" href="#blog" data-blog="sal">Leer más en el blog</a>
-      </div>
-
-      <!-- Columna derecha: Suavizadores y Demo Interactiva -->
-      <div class="sal-col-der">
-        <h3 class="">La sal en los suavizadores de agua</h3>
-        <p class="">La sal es esencial en los suavizadores de agua para regenerar las resinas que atrapan los iones de calcio y magnesio, permitiendo así el proceso de intercambio iónico y ablandando el agua. Sin sal, las resinas se saturan de minerales duros y el sistema pierde su capacidad de funcionar correctamente.</p>
-
-        <div class="demo-box" id="demo">
-          <div class="demo-header">
-            <button class="switch-btn" id="swSal" role="switch" aria-checked="true">
-              <span class="switch-pista"><span class="switch-perilla"></span></span>
-              <span class="">Suavizador con sal</span>
-            </button>
-          </div>
-
-          <div class="tanque-grafico" id="tanque" aria-hidden="true"><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span></div>
-
-          <div class="demo-leyenda" aria-hidden="true">
-            <span class="demo-leyenda-item"><i class="punto-cian"></i> Resina lista</span>
-            <span class="demo-leyenda-item"><i class="punto-gris"></i> Saturada de calcio y magnesio</span>
-          </div>
-
-          <div class="medidor-area">
-            <div class="medidor-head">
-              <span class="">Agua de salida</span>
-              <span id="medTxt" class="">Endureciendo</span>
-            </div>
-            <div class="medidor-barra" aria-hidden="true">
-              <i class="medidor-relleno" id="barra" style="transform: scaleX(0.319048);"></i>
-            </div>
-          </div>
-
-          <p class="demo-estado-texto" id="estado" aria-live="polite">El agua atraviesa la resina, que atrapa calcio y magnesio por intercambio iónico. El agua sale blanda.</p>
-          <p class="demo-pie-nota">Simulación ilustrativa del funcionamiento de una resina de intercambio iónico.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="seccion-tit-row">
+<h2 class="seccion-tit">Sal de grano lavada</h2>
+</div>
+<div class="sal-grid">
+<!-- Columna izquierda: Información y ficha -->
+<div class="sal-col-izq">
+<p>La sal de grano lavada es cloruro de sodio en forma granular gruesa de alta pureza, obtenida de la evaporación solar del agua de mar. Se somete a un proceso de lavado y tamizado para eliminar impurezas, lo que la hace ideal para aplicaciones en la industria alimentaria, como conservante y realzador de sabor, así como para tratamientos de agua, curtido de pieles y fabricación de productos cárnicos y encurtidos.</p>
+<dl class="ficha-datos">
+<div class="ficha-fila">
+<dt>Composición</dt>
+<dd>Cloruro de sodio</dd>
+</div>
+<div class="ficha-fila">
+<dt>Presentación</dt>
+<dd>Granular gruesa, de alta pureza</dd>
+</div>
+<div class="ficha-fila">
+<dt>Origen</dt>
+<dd>Evaporación solar del agua de mar</dd>
+</div>
+<div class="ficha-fila">
+<dt>Proceso</dt>
+<dd>Lavado y tamizado para eliminar impurezas</dd>
+</div>
+<div class="ficha-fila">
+<dt>Aplicaciones</dt>
+<dd>Industria alimentaria (conservante y realzador de sabor), tratamientos de agua, curtido de pieles, productos cárnicos y encurtidos</dd>
+</div>
+</dl>
+<a class="enlace-subrayado" data-blog="sal" href="#blog">Leer más en el blog</a>
+</div>
+<!-- Columna derecha: Suavizadores y Demo Interactiva -->
+<div class="sal-col-der">
+<h3>La sal en los suavizadores de agua</h3>
+<p>La sal es esencial en los suavizadores de agua para regenerar las resinas que atrapan los iones de calcio y magnesio, permitiendo así el proceso de intercambio iónico y ablandando el agua. Sin sal, las resinas se saturan de minerales duros y el sistema pierde su capacidad de funcionar correctamente.</p>
+<div class="demo-box" id="demo">
+<div class="demo-header">
+<button aria-checked="true" class="switch-btn" id="swSal" role="switch">
+<span class="switch-pista"><span class="switch-perilla"></span></span>
+<span>Suavizador con sal</span>
+</button>
+</div>
+<!-- Tanque de intercambio iónico con 96 esferas (8 filas x 12 columnas) -->
+<div aria-hidden="true" class="tanque-grafico" id="tanque">
+<span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span>
+<span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span>
+<span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span>
+<span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span>
+<span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span>
+<span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span>
+<span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span>
+<span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera"></span><span class="grano-esfera dura"></span><span class="grano-esfera"></span><span class="grano-esfera"></span>
+</div>
+<div aria-hidden="true" class="demo-leyenda">
+<span class="demo-leyenda-item"><i class="punto-cian"></i> Resina lista</span>
+<span class="demo-leyenda-item"><i class="punto-gris"></i> Saturada de calcio y magnesio</span>
+</div>
+<div class="medidor-area">
+<div class="medidor-head">
+<span>Agua de salida</span>
+<span id="medTxt">Blanda</span>
+</div>
+<div aria-hidden="true" class="medidor-barra">
+<i class="medidor-relleno" id="barra"></i>
+</div>
+</div>
+<p aria-live="polite" class="demo-estado-texto" id="estado">El agua atraviesa la resina, que atrapa calcio y magnesio por intercambio iónico. El agua sale blanda.</p>
+<p class="demo-pie-nota">Simulación ilustrativa del funcionamiento de una resina de intercambio iónico.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- BLOG -->
-
-
 <!-- CONTACTO -->
 <section class="seccion seccion-oscura" id="contacto">
-  <div class="wrap contacto-grid">
-    <div class="contacto-info">
-      <h2 class="">Cuéntanos qué sistema quieres tratar</h2>
-      <p class="">Escríbenos y te respondemos con una propuesta de equipamiento y automatización en comodato adaptada a tu industria.</p>
-    </div>
-
-    <form class="contacto-form" id="form" novalidate="">
-      <div class="campo-fila">
-        <label for="nombre" class="">Nombre</label>
-        <input class="campo-input" id="nombre" name="nombre" type="text" autocomplete="name" required="" placeholder="Tu nombre">
-      </div>
-      <div class="campo-fila">
-        <label for="empresa" class="">Empresa</label>
-        <input class="campo-input" id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre de tu empresa">
-      </div>
-      <div class="campo-fila campo-full">
-        <label for="servicio" class="">Servicio de interés</label>
-        <select class="campo-select" id="servicio" name="servicio">
-          <option>Torres de enfriamiento</option>
-          <option>Calderas</option>
-          <option>Chillers</option>
-          <option>Agua potable</option>
-          <option>Sal de grano lavada</option>
-        </select>
-      </div>
-      <div class="campo-fila campo-full">
-        <label for="mensaje" class="">Mensaje</label>
-        <textarea class="campo-textarea" id="mensaje" name="mensaje" rows="4" placeholder="Detalles de tus requerimientos o dudas"></textarea>
-      </div>
-      <div class="form-botones">
-        <button type="button" class="btn btn-cian" data-canal="whatsapp">Enviar por WhatsApp</button>
-        <button type="button" class="btn btn-borde" data-canal="email">Enviar por correo</button>
-        <p class="form-aviso" id="aviso" role="status"></p>
-      </div>
-    </form>
-  </div>
+<div class="wrap contacto-grid">
+<div class="contacto-info">
+<h2>Cuéntanos qué sistema quieres tratar</h2>
+<p>Escríbenos y te respondemos con una propuesta de equipamiento y automatización en comodato adaptada a tu industria.</p>
+</div>
+<form class="contacto-form" id="form" novalidate="">
+<div class="campo-fila">
+<label for="nombre">Nombre</label>
+<input autocomplete="name" class="campo-input" id="nombre" name="nombre" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="campo-fila">
+<label for="empresa">Empresa</label>
+<input autocomplete="organization" class="campo-input" id="empresa" name="empresa" placeholder="Nombre de tu empresa" type="text"/>
+</div>
+<div class="campo-fila">
+<label for="telefono">Teléfono</label>
+<input autocomplete="tel" class="campo-input" id="telefono" name="telefono" placeholder="Tu teléfono" type="tel"/>
+</div>
+<div class="campo-fila">
+<label for="correo">Correo electrónico</label>
+<input autocomplete="email" class="campo-input" id="correo" name="correo" placeholder="tu@correo.com" type="email"/>
+</div>
+<div class="campo-fila campo-full">
+<label for="servicio">Servicio de interés</label>
+<select class="campo-select" id="servicio" name="servicio">
+<option>Torres de enfriamiento</option>
+<option>Calderas</option>
+<option>Chillers</option>
+<option>Agua potable</option>
+<option>Sal de grano lavada</option>
+</select>
+</div>
+<div class="campo-fila campo-full">
+<label for="mensaje">Mensaje</label>
+<textarea class="campo-textarea" id="mensaje" name="mensaje" placeholder="Detalles de tus requerimientos o dudas" rows="4"></textarea>
+</div>
+<div class="form-botones">
+<button class="btn btn-cian" data-canal="whatsapp" type="button">Enviar por WhatsApp</button>
+<button class="btn btn-borde" data-canal="email" type="button">Enviar por correo</button>
+<p class="form-aviso" id="aviso" role="status"></p>
+</div>
+</form>
+</div>
 </section>
-
 </main>
-
 <footer class="pie">
-  <div class="wrap pie-inner">
-    <span class="">Tratamiento de Aguas. Soluciones integrales en comodato.</span>
-    <span class="">© 2026 Todos los derechos reservados.</span>
-  </div>
+<div class="wrap pie-inner">
+<span>Tratamiento de Aguas. Soluciones integrales en comodato.</span>
+<span>© 2026 Todos los derechos reservados.</span>
+</div>
 </footer>
-
 <script>
 // CONFIGURACIÓN
 const CONFIG = {
   blog: { torres: '', caldera: '', chillers: '', potable: '', sal: '' },
-  contacto: { whatsapp: '5212291234567', email: 'contacto@tratamientoaguas.mx' }
+  contacto: { whatsapp: '527775318482', email: 'contacto@tratamientoaguas.mx' }
 };
 
-// 1. OLAS EN CANVAS HERO (16 líneas apiladas en la mitad inferior con opacidad creciente)
+// 0. CONTROL DE MENÚ MÓVIL
+(function(){
+  const btnHamb = document.getElementById('btnHamb');
+  const menuMovil = document.getElementById('menu-movil');
+  if(!btnHamb || !menuMovil) return;
+
+  function toggleMenu(abrir){
+    const abierto = abrir !== undefined ? abrir : !menuMovil.classList.contains('activo');
+    menuMovil.classList.toggle('activo', abierto);
+    btnHamb.setAttribute('aria-expanded', abierto);
+    btnHamb.innerHTML = abierto
+      ? '<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>'
+      : '<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+  }
+
+  btnHamb.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  menuMovil.querySelectorAll('a').forEach(enlace => {
+    enlace.addEventListener('click', () => toggleMenu(false));
+  });
+
+  document.addEventListener('click', (e) => {
+    if(!menuMovil.contains(e.target) && !btnHamb.contains(e.target)){
+      toggleMenu(false);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 900 && menuMovil.classList.contains('activo')){
+      toggleMenu(false);
+    }
+  });
+})();
+
+// 1. OLAS EN CANVAS HERO (16 líneas apiladas con opacidad creciente, resize fluido y throttle)
 (function(){
   const c = document.getElementById('olas');
   if(!c) return;
   const ctx = c.getContext('2d');
   const hero = c.parentElement;
-  let w, h, dpr, t = 0, mx = 0.5, tx = 0.5, visible = true, raf = 0;
+  let w = 0, h = 0, dpr = 1, t = 0, mx = 0.5, tx = 0.5, visible = true, raf = 0;
   const N = 16;
 
   function resize(){
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     const r = c.getBoundingClientRect();
-    w = r.width; h = r.height;
-    c.width = w * dpr; c.height = h * dpr;
+    w = r.width;
+    h = r.height;
+    if(w === 0 || h === 0) return;
+    c.width = Math.floor(w * dpr);
+    c.height = Math.floor(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
@@ -1146,11 +1368,10 @@ const CONFIG = {
     ctx.clearRect(0, 0, w, h);
     for (let i = 0; i < N; i++){
       const k = i / (N - 1);
-      // Apiladas en la mitad inferior
       const base = h * (0.42 + k * 0.52);
-      const amp = 10 + k * 26 + Math.abs(mx - 0.5) * 20;
+      const amp = (8 + k * 22 + Math.abs(mx - 0.5) * 16) * Math.min(w / 800, 1.2);
       ctx.beginPath();
-      for (let x = 0; x <= w; x += 8){
+      for (let x = 0; x <= w; x += 10){
         const y = base
           + Math.sin(x * 0.004 + t * 0.6 + i * 0.55 + mx * 2) * amp
           + Math.sin(x * 0.011 - t * 0.9 + i) * amp * 0.35;
@@ -1170,13 +1391,13 @@ const CONFIG = {
     raf = requestAnimationFrame(loop);
   }
 
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', resize, { passive: true });
   resize();
 
   hero.addEventListener('pointermove', e => {
     const r = hero.getBoundingClientRect();
-    tx = (e.clientX - r.left) / r.width;
-  });
+    if(r.width > 0) tx = (e.clientX - r.left) / r.width;
+  }, { passive: true });
 
   new IntersectionObserver(entries => {
     visible = entries[0].isIntersecting;
@@ -1197,6 +1418,9 @@ const CONFIG = {
       tab.setAttribute('aria-selected', match);
       tab.tabIndex = match ? 0 : -1;
       if (panels[i]) panels[i].hidden = !match;
+      if (match && tab.parentElement.scrollWidth > tab.parentElement.clientWidth) {
+        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     });
   }
 
@@ -1205,13 +1429,13 @@ const CONFIG = {
   });
 
   document.querySelectorAll('[data-ir]').forEach(link => {
-    link.addEventListener('click', e => {
+    link.addEventListener('click', () => {
       switchTab(link.dataset.ir);
     });
   });
 })();
 
-// 3. SIMULACIÓN DEL SUAVIZADOR CON INTERCAMBIO IÓNICO
+// 3. SIMULACIÓN DEL SUAVIZADOR CON INTERCAMBIO IÓNICO (96 ESFERAS)
 (function(){
   const tanque = document.getElementById('tanque');
   const sw = document.getElementById('swSal');
@@ -1222,13 +1446,18 @@ const CONFIG = {
   if (!tanque || !sw) return;
 
   const N = 96;
-  const granos = [];
-  for (let i = 0; i < N; i++){
-    const s = document.createElement('span');
-    s.className = 'grano-esfera';
-    tanque.appendChild(s);
-    granos.push(s);
+  let granos = [...tanque.querySelectorAll('.grano-esfera')];
+  if (granos.length !== N){
+    tanque.innerHTML = '';
+    granos = [];
+    for (let i = 0; i < N; i++){
+      const s = document.createElement('span');
+      s.className = 'grano-esfera';
+      tanque.appendChild(s);
+      granos.push(s);
+    }
   }
+
   const orden = [...Array(N).keys()].sort(() => Math.random() - 0.5);
   const rango = new Array(N);
   orden.forEach((idx, i) => rango[idx] = i);
@@ -1240,7 +1469,7 @@ const CONFIG = {
     agotada: 'Sin sal, las resinas se saturan de minerales duros y el sistema pierde su capacidad de funcionar.'
   };
 
-  let f = 0, sal = true, fase = 'servicio', ultimo = 0, raf = 0, visible = false, nPrev = -1, medPrev = '';
+  let f = 0.28, sal = true, fase = 'servicio', ultimo = 0, raf = 0, visible = false, nPrev = -1, medPrev = '';
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
   function updateTexto(){
@@ -1288,12 +1517,13 @@ const CONFIG = {
     updateTexto();
   });
 
-  render(); updateTexto();
+  render();
+  updateTexto();
 
   new IntersectionObserver(entries => {
     visible = entries[0].isIntersecting;
     if (visible && !raf){ ultimo = performance.now(); raf = requestAnimationFrame(frame); }
-  }, { threshold: 0.2 }).observe(demo);
+  }, { threshold: 0.15 }).observe(demo);
 })();
 
 // 4. FORMULARIO DE CONTACTO
@@ -1302,14 +1532,40 @@ const CONFIG = {
   const aviso = document.getElementById('aviso');
   if (!form) return;
 
-  function buildMessage(){
+  function buildMessage(esHtmlEmail){
     const d = new FormData(form);
     const nombre = (d.get('nombre') || '').trim();
     const empresa = (d.get('empresa') || '').trim();
-    let m = 'Hola, soy ' + nombre + (empresa ? ' de ' + empresa : '') + '. Me interesa tratamiento para: ' + d.get('servicio') + '.';
-    const extra = (d.get('mensaje') || '').trim();
-    if (extra) m += '\n\n' + extra;
-    return m;
+    const telefono = (d.get('telefono') || '').trim();
+    const correo = (d.get('correo') || '').trim();
+    const servicio = (d.get('servicio') || '').trim();
+    const mensaje = (d.get('mensaje') || '').trim();
+
+    if(esHtmlEmail){
+      let l = ['Solicitud de Información - WD Chemicals'];
+      if (nombre) l.push('Nombre: ' + nombre);
+      if (empresa) l.push('Empresa: ' + empresa);
+      if (telefono) l.push('Teléfono: ' + telefono);
+      if (correo) l.push('Correo: ' + correo);
+      if (servicio) l.push('Servicio de interés: ' + servicio);
+      if (mensaje) {
+        l.push('Mensaje / Requerimientos:');
+        l.push(mensaje);
+      }
+      return l.join('\n');
+    } else {
+      let lineas = ['*Solicitud de Información - WD Chemicals*'];
+      if (nombre) lineas.push('*Nombre:* ' + nombre);
+      if (empresa) lineas.push('*Empresa:* ' + empresa);
+      if (telefono) lineas.push('*Teléfono:* ' + telefono);
+      if (correo) lineas.push('*Correo electrónico:* ' + correo);
+      if (servicio) lineas.push('*Servicio de interés:* ' + servicio);
+      if (mensaje) {
+        lineas.push('*Mensaje / Requerimientos:*');
+        lineas.push(mensaje);
+      }
+      return lineas.join('\n');
+    }
   }
 
   form.querySelectorAll('[data-canal]').forEach(btn => {
@@ -1320,17 +1576,16 @@ const CONFIG = {
         form.nombre.focus();
         return;
       }
-      const msg = buildMessage();
       if (btn.dataset.canal === 'whatsapp'){
+        const msg = buildMessage(false);
         window.open('https://wa.me/' + CONFIG.contacto.whatsapp + '?text=' + encodeURIComponent(msg), '_blank');
       } else {
-        location.href = 'mailto:' + CONFIG.contacto.email + '?subject=' + encodeURIComponent('Solicitud: ' + form.servicio.value) + '&body=' + encodeURIComponent(msg);
+        const msg = buildMessage(true);
+        const sub = 'Solicitud de información: ' + (form.servicio.value || 'Tratamiento de aguas');
+        location.href = 'mailto:' + CONFIG.contacto.email + '?subject=' + encodeURIComponent(sub) + '&body=' + encodeURIComponent(msg);
       }
     });
   });
 })();
 </script>
-
-
-
 </body></html>
